@@ -1,0 +1,13 @@
+name: pr check
+
+on:
+  pull_request:
+
+jobs:
+  gen-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build Database
+        run: python3 gen_pages.py
