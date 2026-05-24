@@ -49,4 +49,4 @@ Github pages.
 
 [/&lt;gameversion&gt;/&lt;modid>.csv](https://frto027.github.io/ssl10n.csv/1.40.8/HeartBeatLanReceiver.csv)
 
-[/&lt;<gameversion&gt;.csv](https://frto027.github.io/ssl10n.csv/1.40.8.csv)
+[/&lt;gameversion&gt;.csv](https://frto027.github.io/ssl10n.csv/1.40.8.csv)
