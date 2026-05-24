@@ -117,14 +117,18 @@ output.mkdir(exist_ok=True)
 for game_version in files:
     output_game_version = output / game_version
     output_game_version.mkdir(exist_ok=True)
-    
     version_mod = ModTexts()
     for modid in files[game_version]:
+        manifest_ver:list[str] = []
         mod = ModTexts()
         for file in files[game_version][modid].values():
             mod.add_json(file)
             version_mod.add_json(file)
         mod.to_csv(output_game_version / f"{modid}.csv")
+        manifest_ver.append(f"{game_version}/{modid}.csv")
+    with (output_game_version / 'manifest.json').open("w") as f:
+        f.write(json.dumps(manifest_ver))
+
     version_mod.to_csv(output / f"{game_version}.csv")
 
 print(GAME_VERSIONS)
