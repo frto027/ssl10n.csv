@@ -45,6 +45,8 @@ Make a pull request if you want do translate.
 
 Github pages.
 
-`/game_version/mod_id.csv`
+[/<gameversion>/manifest.json](https://frto027.github.io/ssl10n.csv/1.40.8/manifest.json)
 
-`/game_version.csv`
+[/<gameversion>/<modid>.csv](https://frto027.github.io/ssl10n.csv/1.40.8/HeartBeatLanReceiver.csv)
+
+[/<gameversion>.csv](https://frto027.github.io/ssl10n.csv/1.40.8.csv)

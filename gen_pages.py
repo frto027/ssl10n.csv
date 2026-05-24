@@ -69,8 +69,8 @@ class ModTexts:
                 self.dict[k][language_index] = data[k]
 
     def to_csv(self, output_path:pathlib.Path):
-        with output_path.open("w", encoding="utf8", newline="\r\n") as f:
-            f.write("polyglot,100,\n")
+        with output_path.open("w", encoding="utf-8-sig", newline="\r\n") as f:
+            f.write("\npolyglot,100,\n")
             for k in self.dict:
                 f.write(to_csv_cell(k) + ",")
                 for v in self.dict[k]:
