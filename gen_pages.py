@@ -69,7 +69,7 @@ class ModTexts:
                 self.dict[k][language_index] = data[k]
 
     def to_csv(self, output_path:pathlib.Path):
-        if len(x) == 0:
+        if len(self.dict) == 0:
             return
         with output_path.open("w", encoding="utf-8-sig", newline="\r\n") as f:
             f.write("\npolyglot,100,\n")
