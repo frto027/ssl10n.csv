@@ -13,8 +13,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
       - name: Synchronize Mods
         run: npm install && npm run mod_sync
       - name: Create Pull Request

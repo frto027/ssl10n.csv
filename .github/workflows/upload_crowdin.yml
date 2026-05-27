@@ -10,8 +10,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
       - name: Build Database
         env:
           CROWDIN_TOKEN: $${{ secrets.CROWDIN_TOKEN }}
