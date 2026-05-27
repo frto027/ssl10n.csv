@@ -26,7 +26,7 @@ export class CrowdinZipFile{
             }
             const langCode = m[1]
             const modFileName = m[2]
-            console.log(`handling ${modFileName} for language ${langCode}...`)
+            // console.log(`handling ${modFileName} for language ${langCode}...`)
 
             const data = await zip.entryData(entry)
             const records = parse(data, {})
@@ -51,8 +51,6 @@ export class CrowdinZipFile{
             }
         }
         await zip.close()
-
-        console.log(this.datas)
     }
     static crowdin_order = [
         "en",

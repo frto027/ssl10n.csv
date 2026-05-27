@@ -224,7 +224,9 @@ class LocalVersionSource {
             console.log("no useful line, file not generated.")
             return
         }
-        const csv_content = stringify(lines)
+        const csv_content = stringify(lines,{
+            record_delimiter:"windows"
+        })
         console.log("done")
         fs.writeFileSync(`dist_page/mods/${this.version.crowdin_sync_file}`, csv_content)
         remote.datas.push({
