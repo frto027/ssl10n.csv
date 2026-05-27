@@ -2,8 +2,11 @@ name: Upload crowdin
 
 on:
   workflow_dispatch:
-  workflow_call:
-
+  push:
+    branches:
+      - master
+    paths:
+      - mods/**
 jobs:
   upload-crowdin:
     runs-on: ubuntu-latest

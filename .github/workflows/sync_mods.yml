@@ -2,7 +2,6 @@ name:  Sync mods
 
 on:
   workflow_dispatch:
-  workflow_call:
 
 jobs:
  do-mod-sync:
