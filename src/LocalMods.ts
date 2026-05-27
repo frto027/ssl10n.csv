@@ -147,7 +147,7 @@ class LocalVersionSource {
                 await c.corwdinClient.sourceFilesApi.updateOrRestoreFile(c.projectId, file_id, {
                     storageId: storage.data.id,
                     name: this.version.crowdin_sync_file,
-                    updateOption: 'keep_translations_and_approvals'
+                    updateOption: "clear_translations_and_approvals"
                 } )
             }
             console.log("done")
