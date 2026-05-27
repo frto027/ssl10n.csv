@@ -5,6 +5,7 @@ import { ModDatabase, WEB_ROOT, type ManifestModInfo, type ManifestVersionSource
 import type { RemoteManifestMods, RemoteModInfo } from "./RemoteMods.js"
 import { CrowdinZipFile } from "./CrowdinZipFile.js"
 import { stringify } from "csv-stringify/sync"
+import { createHash } from "node:crypto"
 
 export class LocalMod {
     modId: string
@@ -229,10 +230,14 @@ class LocalVersionSource {
             record_delimiter:"windows"
         })
         console.log("done")
-        fs.writeFileSync(`dist_page/mods/${this.version.crowdin_sync_file}`, csv_content)
+        const hash = createHash("md5").update(csv_content).digest("hex")
+        fs.writeFileSync(`dist_page/mods/${hash}.${this.version.crowdin_sync_file}`, csv_content)
+
         remote.datas.push({
             version: this.version.version,
-            csv_url: `${WEB_ROOT}/mods/${this.version.crowdin_sync_file}`
+            csv_url: `${WEB_ROOT}/mods/${hash}.${this.version.crowdin_sync_file}`,
+            csv_name: this.version.crowdin_sync_file,
+            md5:hash
         })
     }
 }

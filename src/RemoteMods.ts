@@ -7,7 +7,9 @@ export interface RemoteModInfo{
 
 export interface RemoteVersionSource{
     version:string,
-    csv_url:string
+    csv_url:string,
+    csv_name:string,
+    md5:string
 }
 
 export type RemoteManifestMods = Record<string /* mod id */, RemoteModInfo>
