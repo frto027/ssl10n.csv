@@ -1,8 +1,10 @@
 import * as fs from "node:fs"
 import { CrowdinOperates } from "./CrowdinOperates.js"
 import { Buffer } from "node:buffer"
-import { ModDatabase, type ManifestModInfo, type ManifestVersionSource } from "./mods.js"
-import type { RemoteManifestMods } from "./RemoteMods.js"
+import { ModDatabase, WEB_ROOT, type ManifestModInfo, type ManifestVersionSource } from "./mods.js"
+import type { RemoteManifestMods, RemoteModInfo } from "./RemoteMods.js"
+import { CrowdinZipFile } from "./CrowdinZipFile.js"
+import { stringify } from "csv-stringify/sync"
 
 export class LocalMod {
     modId: string
@@ -30,10 +32,15 @@ export class LocalMod {
         }
     }
 
-    async downloadCrowdin() {
-        for (let l of this.localVersions) {
-            await l.downloadCrowdin()
+    async handleCrowdinZip(zip:CrowdinZipFile, remote:RemoteManifestMods) {
+        const modInfo:RemoteModInfo = {
+            name: this.info.name || this.modId,
+            datas: []
         }
+        for (let l of this.localVersions) {
+            await l.handleCrowdinZip(zip, modInfo)
+        }
+        remote[this.modId] = modInfo
     }
 
     saveRemote(): RemoteManifestMods {
@@ -56,9 +63,15 @@ class LocalVersionSource {
     }
 
     async syncLocal() {
+        console.log(`sync for ${this.version.csv_url}`)
+        if(this.version.disable_csv_downlad){
+            console.log("ignore")
+            return
+        }
         try {
             let bytes = await (await fetch(this.version.csv_url)).bytes();
             fs.writeFileSync(this.version.csv_local, bytes)
+            console.log(`done, ${bytes} bytes downloaded`)
         } catch (e) {
             console.error(`sync crowdin failed with ${this.version.csv_url}`, e)
         }
@@ -98,11 +111,12 @@ class LocalVersionSource {
                 }
 
             }
-            csv_str = csv_lines.join("\r\n")
+            csv_str = csv_lines.join("\n")
 
             let c = await CrowdinOperates.getInstance()
             let files = await c.corwdinClient.sourceFilesApi.listProjectFiles(c.projectId, {
-                directoryId: c.dirId
+                directoryId: c.dirId,
+                limit: 400
             })
             let file_id : number = -1
             console.log("will sync crowdin file " + this.version.crowdin_sync_file)
@@ -116,7 +130,7 @@ class LocalVersionSource {
             if(file_id != -1){
                 // check the remote file update
                 let downlaod_data = await c.corwdinClient.sourceFilesApi.downloadFile(c.projectId, file_id)
-                let bytes = await (await fetch(downlaod_data.data.url)).arrayBuffer()
+                let bytes = await (await fetch(downlaod_data.data.url)).bytes()
                 let file_str = Buffer.from(bytes).toString("utf-8")
 
                 if(file_str == csv_str)
@@ -155,7 +169,67 @@ class LocalVersionSource {
             console.error(`error while handling ${this.version.csv_local}`, e)
         }
     }
-    async downloadCrowdin() {
+    
+    async handleCrowdinZip(zip:CrowdinZipFile, remote:RemoteModInfo) {
+        console.log("handle crowdin file for local csv file" + this.version.csv_local)
+        if(this.version.crowdin_sync_file == undefined){
+            console.log("no csv file.")
+            return
+        }
+        console.log("remote crowdin file is " + this.version.crowdin_sync_file)
+        let data = zip.datas.get(this.version.crowdin_sync_file)
+        if(data == undefined){
+            console.log("no remote file found")
+            return
+        }
 
+        if(!fs.existsSync("dist_page/mods/")){
+            fs.mkdirSync("dist_page/mods/", {recursive: true})
+        }
+        console.log("generating...")
+        
+        const column_count = 2 + CrowdinZipFile.crowdin_order.length
+
+        const lines = []
+
+        let line = new Array(column_count)
+        line[0] = "polyglot"
+        line[1] = "100"
+        for(let i=2; i< line.length;i++){
+            line[i] = ""
+        }
+        lines.push(line)
+        for(const keyValues of data){
+            line = new Array(column_count)
+            line[0] = keyValues[0]
+            line[1] = ""
+
+            let enText = keyValues[1].get("en")
+            let isUsefulLine = false
+            let currentColumn = 2
+            for(const lineCode of CrowdinZipFile.crowdin_order){
+                let value = keyValues[1].get(lineCode) || ""
+                if(value == "" || value == enText)
+                    value = ""
+                if(value != "")
+                    isUsefulLine = true
+                line[currentColumn++] = value
+            }
+            if(isUsefulLine){
+                lines.push(line)
+            }
+        }
+
+        if(lines.length == 1){
+            console.log("no useful line, file not generated.")
+            return
+        }
+        const csv_content = stringify(lines)
+        console.log("done")
+        fs.writeFileSync(`dist_page/mods/${this.version.crowdin_sync_file}`, csv_content)
+        remote.datas.push({
+            version: this.version.version,
+            csv_url: `${WEB_ROOT}/mods/${this.version.crowdin_sync_file}`
+        })
     }
 }

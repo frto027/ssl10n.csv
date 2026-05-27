@@ -34,7 +34,8 @@ export interface ManifestVersionSource{
     key_prefix:string,
     csv_url:string,
     csv_local:string,
-    crowdin_sync_file?:string
+    crowdin_sync_file?:string,
+    disable_csv_downlad?:boolean
 }
 
 export interface ManifestModInfo{
@@ -43,6 +44,8 @@ export interface ManifestModInfo{
 }
 
 export type ManifestMods = Record<string /* mod id */, ManifestModInfo>
+
+export const WEB_ROOT = "https://frto027.github.io/ssl10n.csv"
 
 export const ModDatabase:ManifestMods = {
     "Loqolizer" /* this is mod id */ : {
