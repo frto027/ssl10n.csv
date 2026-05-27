@@ -15,5 +15,5 @@ jobs:
           node-version: 24
       - name: Build Database
         env:
-          CROWDIN_TOKEN: $${{ secrets.CROWDIN_TOKEN }}
+          CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
         run: npm install && npm run mod_upload
