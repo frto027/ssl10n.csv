@@ -166,7 +166,8 @@ class LocalVersionSource {
             }
             console.log("done")
         }catch(e){
-            console.error(`error while handling ${this.version.csv_local}`, e)
+            // console.error(`error while handling ${this.version.csv_local}`, e)
+            throw e
         }
     }
 
