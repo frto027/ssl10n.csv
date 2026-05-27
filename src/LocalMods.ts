@@ -71,7 +71,7 @@ class LocalVersionSource {
         try {
             let bytes = await (await fetch(this.version.csv_url)).bytes();
             fs.writeFileSync(this.version.csv_local, bytes)
-            console.log(`done, ${bytes} bytes downloaded`)
+            console.log(`done, ${bytes.length} bytes downloaded`)
         } catch (e) {
             console.error(`sync crowdin failed with ${this.version.csv_url}`, e)
         }
@@ -169,7 +169,7 @@ class LocalVersionSource {
             console.error(`error while handling ${this.version.csv_local}`, e)
         }
     }
-    
+
     async handleCrowdinZip(zip:CrowdinZipFile, remote:RemoteModInfo) {
         console.log("handle crowdin file for local csv file" + this.version.csv_local)
         if(this.version.crowdin_sync_file == undefined){
