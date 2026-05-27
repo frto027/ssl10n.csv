@@ -78,7 +78,7 @@ async function generate_pages_from_zip(){
 }
 
 async function gen_pages(){
-    // await download_crowdin_zip()
+    await download_crowdin_zip()
     await generate_pages_from_zip()
 }
 
