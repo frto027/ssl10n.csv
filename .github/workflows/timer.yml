@@ -6,7 +6,7 @@ on:
 jobs:
   # Single deploy job since we're just deploying
   generate_page:
-    uses: ./.github/workflows/generate_page.yml
+    uses: ./.github/workflows/generate_pages.yml
   upload_crowdin:
     uses: ./.github/workflows/upload_crowdin.yml
   sync_mods:
