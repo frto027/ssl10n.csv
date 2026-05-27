@@ -43,6 +43,8 @@ async function download_crowdin_zip(){
                 if(sec % 20 == 0){
                     console.log(`still waiting... ${sec} seconds`)
                 }
+            }else{
+                break
             }
         }
     }
