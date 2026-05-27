@@ -225,7 +225,7 @@ class LocalVersionSource {
             return
         }
         const csv_content = stringify(lines,{
-            record_delimiter:"\r\n"
+            record_delimiter:"windows"
         })
         console.log("done")
         fs.writeFileSync(`dist_page/mods/${this.version.crowdin_sync_file}`, csv_content)
