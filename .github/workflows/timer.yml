@@ -1,0 +1,13 @@
+name: Time Schedule Task
+
+on:
+  workflow_dispatch:
+
+jobs:
+  # Single deploy job since we're just deploying
+  generate_page:
+    uses: ./.github/workflows/generate_page.yml
+  upload_crowdin:
+    uses: ./.github/workflows/upload_crowdin.yml
+  sync_mods:
+    uses: ./.github/workflows/sync_mods.yml

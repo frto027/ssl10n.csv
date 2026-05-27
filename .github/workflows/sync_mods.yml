@@ -1,7 +1,8 @@
-name: Pull request check
+name:  Sync mods
 
 on:
-  pull_request:
+  workflow_dispatch:
+  workflow_call:
 
 jobs:
   upload-crowdin:
@@ -13,3 +14,5 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Synchronize Mods
         run: npm install && npm run mod_sync
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v8

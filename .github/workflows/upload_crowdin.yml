@@ -1,0 +1,18 @@
+name: Upload crowdin
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  upload-crowdin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Build Database
+        env:
+          CROWDIN_TOKEN: $${{ secrets.CROWDIN_TOKEN }}
+        run: npm install && npm run mod_upload
