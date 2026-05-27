@@ -26,7 +26,6 @@
     "csv-parse": "^6.2.1",
     "csv-stringify": "^6.7.0",
     "node-stream-zip": "^1.15.0",
-    "tsc": "^2.0.4",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
