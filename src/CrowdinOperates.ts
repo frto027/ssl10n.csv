@@ -1,8 +1,7 @@
 // credentials
 
 import { Client, type Credentials, SourceFilesModel } from '@crowdin/crowdin-api-client';
-import { readFileSync, statSync } from 'node:fs';
-import { stat } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 
 let project_name = "beatsaber-sslocalization"
 
@@ -25,7 +24,7 @@ export class CrowdinOperates{
             token: process.env.CROWDIN_TOKEN || "",
         };
 
-        if(statSync(".crowdin_token").isFile()){
+        if(existsSync(".crowdin_token")){
             credentials.token = readFileSync(".crowdin_token").toString()
         }
 
