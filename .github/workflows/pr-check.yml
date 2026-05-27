@@ -10,4 +10,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build Database
-        run: python3 gen_pages.py
+        run: npm install && npm run gen_page

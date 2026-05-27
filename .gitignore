@@ -1,1 +1,4 @@
 dist
+dist_page
+node_modules
+.crowdin_token

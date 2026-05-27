@@ -1,0 +1,31 @@
+{
+  "name": "ssl10n.csv",
+  "version": "1.0.0",
+  "description": "localization repo for beatsaber quest mod.",
+  "homepage": "https://github.com/frto027/ssl10n.csv#readme",
+  "bugs": {
+    "url": "https://github.com/frto027/ssl10n.csv/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frto027/ssl10n.csv.git"
+  },
+  "license": "MIT",
+  "author": "frto027",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "mod_sync": "npx tsc && node dist/mod_sync.js",
+    "mod_upload": "npx tsc && node dist/mod_upload_crowdin.js",
+    "gen_page": "npx tsc && node dist/mod_gen_pages.js"
+  },
+  "dependencies": {
+    "@crowdin/crowdin-api-client": "^1.55.2",
+    "csv": "^6.5.1",
+    "tsc": "^2.0.4",
+    "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1"
+  }
+}
