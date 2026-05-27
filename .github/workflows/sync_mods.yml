@@ -2,6 +2,8 @@ name:  Sync mods
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 */1 * *'
 
 jobs:
  do-mod-sync:
