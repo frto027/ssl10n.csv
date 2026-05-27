@@ -35,7 +35,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build Database
         env:
-          CROWDIN_TOKEN: $${{ secrets.CROWDIN_TOKEN }}
+          CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
         run: npm install && npm run gen_page
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
