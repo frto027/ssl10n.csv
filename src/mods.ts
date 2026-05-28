@@ -53,7 +53,7 @@ export const ModDatabase:ManifestMods = {
         datas: [
             // you can specify multiple csv file for different mod versions
             {
-                version: "*.*.*",
+                version: "*",
                 // this is csv file from your mod repo
                 csv_url: "https://raw.githubusercontent.com/BeatSaberCN/Loqolizer/refs/heads/master/assets/localize.csv",
                 key_prefix: "LOQOLIZER_", // your every key must starts with this key_prefix, or the key_prefix will be added before your key.
