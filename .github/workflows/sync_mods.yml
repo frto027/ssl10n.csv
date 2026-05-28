@@ -17,8 +17,13 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-      - name: Synchronize Mods
-        run: npm install && npm run mod_sync
+          
+      - name: npm install
+        run: npm install
+        
+      - name: npm run mod_sync
+        run: npm run mod_sync
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
