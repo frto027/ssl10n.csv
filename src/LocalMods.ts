@@ -92,7 +92,8 @@ class LocalVersionSource {
             let csv_lines = csv_str.split("\n")
 
             while(csv_lines.length > 0){
-                if(csv_lines[0]?.startsWith("polyglot,100")){
+                const line = csv_lines[0]
+                if(line?.startsWith("polyglot,") || line?.startsWith("Polyglot,") || line?.startsWith("PolyMaster,")){
                     csv_lines.shift()
                     break
                 }
