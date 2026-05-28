@@ -13,10 +13,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-      - name: Build Database
+          
+      - name: npm install
+        run: npm install
+        
+      - name: npm run mod_upload
         env:
           CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
-        run: npm install && npm run mod_upload
+        run: npm run mod_upload
