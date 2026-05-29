@@ -4,7 +4,7 @@ this repo generates csv file for each bs mods
 
 # For Translators
 
-The localized texts can be found at [the Crowdin Projects](https://crowdin.com/project/beatsaber-sslocalization).
+The localized texts can be found and translated at [the Crowdin Projects](https://crowdin.com/project/beatsaber-sslocalization).
 
 # Obtain translated contents
 
