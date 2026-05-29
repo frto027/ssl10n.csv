@@ -8,9 +8,9 @@ The localized texts can be found at [the Crowdin Projects](https://crowdin.com/p
 
 # Obtain translated contents
 
-Here is the [manifest](https://frto027.github.io/ssl10n.csv/manifest.json) for each mods. Download what you need.
+[web page](https://frto027.github.io/ssl10n.csv/index.html)
 
-the json format is [RemoteManifestMods](src/RemoteMods.ts)
+api: [manifest.json](https://frto027.github.io/ssl10n.csv/manifest.json), the json format is [RemoteManifestMods](src/RemoteMods.ts)
 
 # Localize your mod here
 

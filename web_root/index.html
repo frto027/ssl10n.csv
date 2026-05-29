@@ -1,0 +1,73 @@
+<html>
+<head>
+<body>
+    <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js"
+        integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+    <script>
+        load();
+        async function load() {
+            let json = await (await fetch("./manifest.json")).json()
+
+            let elem_infos = $("#mod-infos")
+            for (let modId in json) {
+                info = json[modId]
+
+                elem_infos.append($("<h4></h4>").text(modId))
+                for (let data of info.datas) {
+                    elem_infos.append(
+                        $("<table></table>")
+                            .attr({
+                                border: "1px solid black"
+                            })
+                            .append($("<tr></tr>")
+                                .append($("<td></td>").text("version"))
+                                .append($("<td></td>").text(data.version))
+                            )
+                            .append($("<tr></tr>")
+                                .append($("<td></td>").text("csv_url"))
+                                .append($("<td></td>").text(data.csv_url))
+                            )
+                            .append($("<tr></tr>")
+                                .append($("<td></td>").text("md5"))
+                                .append($("<td></td>").text(data.md5))
+                            )
+                            .append($("<tr></tr>")
+                                .append($("<td></td>").text("csv_name"))
+                                .append($("<td></td>").text(data.csv_name))
+                            )
+                            .append($("<tr></tr>")
+                                .append($("<td></td>").text("operate"))
+                                .append($("<td></td>")
+                                    .append($("<a>download csv</a>").attr("href", data.csv_url).attr("target", "_blank"))
+                                    .append("&nbsp;&nbsp;&nbsp;")
+                                    .append($("<button>download offline qmod file</button>").on("click", () => download_offline_qmod(modId, info, data)))
+                                )
+                            )
+                    )
+                }
+
+            }
+        }
+
+        function download_offline_qmod(modId, info, versionData) {
+            console.log("download offline qmod", modId, info, versionData)
+            window.alert("Working in progress...")
+        }
+    </script>
+    <h3>offline qmod usage</h3>
+
+    <b>Be careful about mod versions. The mod always load your csv files in these qmods, so match your mod versions
+        manually.</b>
+
+    <ul>
+        <li>First, install <a href="#">Loqolizer</a>.</li>
+        <li>Seconed, install the offline qmod that you need.</li>
+    </ul>
+
+    The offline qmod file is a <code>.qmod</code> file. Once you install it, Loqolizer will always load that csv file.
+
+    <h3>Mods</h3>
+    <div id="mod-infos"></div>
+</body>
+</head>
+</html>

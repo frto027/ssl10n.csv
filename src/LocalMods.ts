@@ -186,8 +186,8 @@ class LocalVersionSource {
             return
         }
 
-        if(!fs.existsSync("dist_page/mods/")){
-            fs.mkdirSync("dist_page/mods/", {recursive: true})
+        if(!fs.existsSync("web_root/mods/")){
+            fs.mkdirSync("web_root/mods/", {recursive: true})
         }
         console.log("generating...")
         
@@ -232,7 +232,7 @@ class LocalVersionSource {
         })
         console.log("done")
         const hash = createHash("md5").update(csv_content).digest("hex")
-        fs.writeFileSync(`dist_page/mods/${hash}.${this.version.crowdin_sync_file}`, csv_content)
+        fs.writeFileSync(`web_root/mods/${hash}.${this.version.crowdin_sync_file}`, csv_content)
 
         remote.datas.push({
             version: this.version.version,

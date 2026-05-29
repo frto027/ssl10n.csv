@@ -66,8 +66,8 @@ async function generate_pages_from_zip(){
     let crowninZip = new CrowdinZipFile()
     await crowninZip.init("dist/crowdin.zip")
     
-    if(!existsSync("dist_page"))
-        mkdirSync("dist_page")
+    if(!existsSync("web_root"))
+        mkdirSync("web_root")
     const mods = LocalMod.getMods()
 
     const manifest: RemoteManifestMods = {
@@ -76,7 +76,7 @@ async function generate_pages_from_zip(){
     for(let mod of mods){
         await mod.handleCrowdinZip(crowninZip, manifest)
     }
-    writeFileSync("dist_page/manifest.json", JSON.stringify(manifest))
+    writeFileSync("web_root/manifest.json", JSON.stringify(manifest))
 }
 
 async function gen_pages(){
