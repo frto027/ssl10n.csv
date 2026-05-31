@@ -6,6 +6,8 @@ This is a localization solution for beatsaber quest mods.
 
 Install [Loqolizer](https://github.com/BeatSaberCN/Loqolizer) to enable mods localize. The mod has a snapshot of translate texts in release time.
 
+Online resource update have not yet been developed. You will need to update the mod version to load new translate data.
+
 ## For Translator
 
 Help us translate mod strings at [the Crowdin Projects](https://crowdin.com/project/beatsaber-sslocalization)!
