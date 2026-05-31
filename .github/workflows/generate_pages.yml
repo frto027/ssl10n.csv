@@ -47,6 +47,7 @@ jobs:
           contributors_per_line: 8
           max_contributors: 32
           image_size: 16
+          min_words_contributed: 3
           files: Readme.md
             
         env:
