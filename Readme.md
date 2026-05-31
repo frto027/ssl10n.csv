@@ -2,7 +2,7 @@
 
 This is a localization solution for beatsaber quest mods.
 
-Translate contributors:  
+Translate contributors from crowdin project:  
 ![svg](https://frto027.github.io/ssl10n.csv/crowdin_contributors.svg)
 
 ## For Player
