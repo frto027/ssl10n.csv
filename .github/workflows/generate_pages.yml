@@ -46,7 +46,7 @@ jobs:
           svg_output_path: 'web_root/crowdin_contributors.svg'
           contributors_per_line: 8
           max_contributors: 32
-          image_size: 16
+          image_size: 50
           min_words_contributed: 3
           files: Readme.md
             
