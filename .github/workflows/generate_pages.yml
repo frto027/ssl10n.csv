@@ -47,7 +47,8 @@ jobs:
           contributors_per_line: 8
           max_contributors: 32
           image_size: 16
-          files: []
+          files:
+            
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJ_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
