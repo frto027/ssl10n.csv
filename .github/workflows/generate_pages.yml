@@ -47,7 +47,7 @@ jobs:
           contributors_per_line: 8
           max_contributors: 32
           image_size: 16
-          files:
+          files: Readme.md
             
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJ_ID }}
