@@ -38,6 +38,19 @@ jobs:
         env:
           CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
         run: npm install && npm run gen_page
+      
+      - name: Generate Crowdin Contributors
+        uses: andrii-bodnar/action-crowdin-contributors@c0bdc9a1e54b6a64e59f14c08b7432f69406910f
+        with:
+          svg: true
+          svg_output_path: 'web_root/crowdin_contributors.svg'
+          contributors_per_line: 8
+          max_contributors: 32
+          image_size: 16
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJ_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
