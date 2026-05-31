@@ -4,9 +4,7 @@ This is a localization solution for beatsaber quest mods.
 
 ## For Player
 
-Install [Loqolizer](https://github.com/BeatSaberCN/Loqolizer) to enable mods localize. The mod has a snapshot of translate texts in release time, only for the latest version of each mods.
-
-(WIP, not works)~~If you're offline and want old mod translate packages, you can also download [addictional translate](https://frto027.github.io/ssl10n.csv/index.html) package for your mods.~~
+Install [Loqolizer](https://github.com/BeatSaberCN/Loqolizer) to enable mods localize. The mod has a snapshot of translate texts in release time.
 
 ## For Translator
 
