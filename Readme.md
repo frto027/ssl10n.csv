@@ -2,6 +2,9 @@
 
 This is a localization solution for beatsaber quest mods.
 
+Translate contributors:  
+![svg](https://frto027.github.io/ssl10n.csv/crowdin_contributors.svg)
+
 ## For Player
 
 Install [Loqolizer](https://github.com/BeatSaberCN/Loqolizer) to enable mods localize. The mod has a snapshot of translate texts in release time.
