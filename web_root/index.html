@@ -41,7 +41,7 @@
                                 .append($("<td></td>")
                                     .append($("<a>download csv</a>").attr("href", data.csv_url).attr("target", "_blank"))
                                     .append("&nbsp;&nbsp;&nbsp;")
-                                    .append($("<button>download offline qmod file</button>").on("click", () => download_offline_qmod(modId, info, data)))
+                                    //.append($("<button>download offline qmod file</button>").on("click", () => download_offline_qmod(modId, info, data)))
                                 )
                             )
                     )
@@ -105,7 +105,7 @@
         This is a beatsaber quest localization repo for mod localization work. <br/> The contents is synchronized from <a href="https://crowdin.com/project/beatsaber-sslocalization">crowdin</a> everyday.<br/>
         Join the translate at crowdin!
     </p>
-
+    <!--
     <h3>offline qmod usage</h3>
 
     <b>Be careful about mod versions. The mod always load your installed csv files in these qmods, so match you need match mod versions
@@ -117,7 +117,7 @@
     </ul>
 
     The offline qmod file is a <code>.qmod</code> file. Once you install it, Loqolizer will always load that csv file.
-
+    -->
     <h3>Mods</h3>
     <div id="mod-infos"></div>
 </body>
