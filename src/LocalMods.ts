@@ -196,7 +196,7 @@ class LocalVersionSource {
         const lines = []
 
         let line = new Array(column_count)
-        line[0] = "polyglot"
+        line[0] = "Polyglot"
         line[1] = "100"
         for(let i=2; i< line.length;i++){
             line[i] = ""
