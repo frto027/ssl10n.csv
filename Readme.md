@@ -50,3 +50,11 @@ Everything else will be automatic.
 This repo auto sync csv files to crowdin everyday.
 
 see [Crowdin.md](./Crowdin.md) to learn how to setup another crowndin project by your self.
+
+# License
+
+This project is developed under MIT License  
+
+the csv files in `/mods` are NOT licenced, because they're owned by other mods. see licence file for their own mods.
+
+If you add a URL to this repository, we consider this means you grant us the translation rights.
