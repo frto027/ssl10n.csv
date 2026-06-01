@@ -1,6 +1,5 @@
 ﻿Polyglot,desc,english
 HEART_BEAT_QUEST_enabled,,enabled(need restart)
-HEART_BEAT_QUEST_lang_name,,english
 HEART_BEAT_QUEST_heart_config,,HEART Config
 HEART_BEAT_QUEST_heart_devices,,HEART Devices
 HEART_BEAT_QUEST_heart_senders,,HEART Senders
@@ -36,21 +35,17 @@ HEART_BEAT_QUEST_pairing,,Pairing.. click to stop.
 HEART_BEAT_QUEST_not_pairing,,Not pairing.. click to start.
 HEART_BEAT_QUEST_hiding_mac_addr,,"hiding mac address, click to show."
 HEART_BEAT_QUEST_showing_mac_addr,,"showing mac address, click to hide"
-HEART_BEAT_QUEST_unknown_left_quote,,Unknown(
 HEART_BEAT_QUEST_server_skip,,skip 
 HEART_BEAT_QUEST_heart_rate_lan_protocol_ver,,Heart Rate Lan Protocol Ver 
-HEART_BEAT_QUEST_mod_version,,"Mod version "" VERSIO"
-HEART_BEAT_QUEST_for_game,,"For Game "" GAME_VERSIO"
+HEART_BEAT_QUEST_mod_version,,Mod version {}
+HEART_BEAT_QUEST_for_game,,For Game {}
 HEART_BEAT_QUEST_no_beatleader,,"Beatleader not detected or supported, record is disabled"
 HEART_BEAT_QUEST_waiting,,Waiting...
-HEART_BEAT_QUEST_config_adjust_speed,,Config Adjust Speed
 HEART_BEAT_QUEST_text_color,,Text Color
 HEART_BEAT_QUEST_flash_text_color,,Flash Text Color
 HEART_BEAT_QUEST_replay_flash_text_color,,Replay Flash Text Color
 HEART_BEAT_QUEST_flash_duration_when_text_come,,Flash duration when data come
 HEART_BEAT_QUEST_flash_test,,Flash Test
-HEART_BEAT_QUEST_line_space,,Line Space
-HEART_BEAT_QUEST_reset_default_line_space,,Reset Default Line Space
 HEART_BEAT_QUEST_reset_to_default,,Reset to default
 HEART_BEAT_QUEST_data_source,,data source(need restart)
 HEART_BEAT_QUEST_data_source_random,,random
@@ -72,7 +67,7 @@ HEART_BEAT_QUEST_pulsoid_done,,Done
 HEART_BEAT_QUEST_pulsoid_cancel,,Cancel
 HEART_BEAT_QUEST_pulsoid_token,,Pulsoid Token
 HEART_BEAT_QUEST_pulsoid_clear_token,,Clear and Reset
-HEART_BEAT_QUEST_your_setthings_is_in_another_menu,,Thank you Player! But data-source config is in another menu!
+HEART_BEAT_QUEST_your_setthings_is_in_another_menu,"this is a mimic of FC's super mario brother. Thank you Mario! But our princess is in another castle!",Thank you Player! But data-source config is in another menu!
 HEART_BEAT_QUEST_ui_not_avaliable_in_qounter,,Heart UI not avaliable in qounters. Please add HeartRate text source at qounters.
 HEART_BEAT_QUEST_ignore_qounters,,Ignore Qounters++ mod
 HEART_BEAT_QUEST_ignore_qounters_hint,,"please enable this if Qounters++ is disabled. If enabled, Qounters++ may not work with this mod."
