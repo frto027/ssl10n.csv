@@ -75,3 +75,5 @@ HEART_BEAT_QUEST_advance_ui_required,,Hint:Need enable Advanced HUD to see this 
 HEART_BEAT_QUEST_mdns_enable,,Enable mDNS
 HEART_BEAT_QUEST_mdns_name_no,,mDns n/a
 HEART_BEAT_QUEST_mdns_name_title,,mDns name:
+HEART_BEAT_QUEST_setthings_build_with,,build with:
+HEART_BEAT_QUEST_QOUNTERSPP_INIT,,Qounters++ API Initialized
