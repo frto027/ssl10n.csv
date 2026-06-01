@@ -1,5 +1,9 @@
 import { LocalMod } from "./LocalMods.js";
 
-for(let mod of LocalMod.getMods()){
-    mod.uploadCrowdin()
+async function upload() {
+    for(let mod of LocalMod.getMods()){
+        await mod.uploadCrowdin()
+    }
 }
+upload()
+
