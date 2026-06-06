@@ -22,8 +22,7 @@ Your string will be automatically synchronized to the Loqolizer mod.
 ## For Modder
 Follow this guide to add localization support for your mod.
 
-- use the qpm library `sslocalization`, [see here](https://github.com/frto027/SimpleStupidLocalization)
-- To work with the Loqolizer mod, use a csv file, and load it in your mods with `SSL10n::Database::PolyglotFormat::xxx`. The csv format details can be found in sslocalization's readme file. [Example](https://github.com/BeatSaberCN/Loqolizer/blob/master/assets/localize.csv) here.
+- use the qpm library `sslocalization`, [see here](https://github.com/frto027/SimpleStupidLocalization). load your own csv file.
 - Just add your mod to [src/mods.ts](/src/mods.ts) and open a pull request. Then Loqolizer mod will automatically translate your keys.
 
 Optional:
