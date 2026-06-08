@@ -31,7 +31,7 @@ async function download_crowdin_zip(){
             skipUntranslatedStrings: true,
             exportApprovedOnly: false
         })).data.id
-        console.log("build started")
+        console.log("build started, id=", build_id)
     }
 
     let build_status = (await c.corwdinClient.translationsApi.checkBuildStatus(c.projectId, build_id)).data.status
@@ -85,7 +85,7 @@ async function gen_pages(){
     let force_update = process.env.FORCE_UPDATE
     console.log("Running... force update is ", force_update)
     if(force_update != 'true'){
-        let remote_manifest:RemoteManifestMods = (await fetch(WEB_ROOT + "/manifest.json")).json() as any
+        let remote_manifest:RemoteManifestMods = (await (await fetch(WEB_ROOT + "/manifest.json")).json()) as any
         if(remote_manifest.crowdinUpdatedAt == (await CrowdinOperates.getInstance()).updatedAt){
             console.log("we don't need update.")
             if(process.env.GITHUB_OUTPUT){
