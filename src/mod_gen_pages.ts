@@ -73,7 +73,8 @@ async function generate_pages_from_zip(){
 
     const manifest: RemoteManifestMods = {
         crowdinUpdatedAt: (await CrowdinOperates.getInstance()).updatedAt,
-        mods: {}
+        mods: {},
+        manifestTimestamp: (new Date()).toISOString()
     }
     for(let mod of mods){
         await mod.handleCrowdinZip(crowninZip, manifest)

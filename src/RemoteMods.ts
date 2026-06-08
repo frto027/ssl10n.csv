@@ -14,5 +14,6 @@ export interface RemoteVersionSource{
 
 export interface RemoteManifestMods {
     mods: Record<string /* mod id */, RemoteModInfo>,
-    crowdinUpdatedAt:string
+    crowdinUpdatedAt:string,
+    manifestTimestamp:string
 }
