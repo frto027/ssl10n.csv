@@ -12,4 +12,7 @@ export interface RemoteVersionSource{
     md5:string
 }
 
-export type RemoteManifestMods = Record<string /* mod id */, RemoteModInfo>
+export interface RemoteManifestMods {
+    mods: Record<string /* mod id */, RemoteModInfo>,
+    crowdinUpdatedAt:string
+}

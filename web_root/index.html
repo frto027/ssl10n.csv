@@ -7,7 +7,7 @@
     <script>
         load();
         async function load() {
-            let json = await (await fetch("./manifest.json")).json()
+            let json = (await (await fetch("./manifest.json")).json())["mods"]
 
             let elem_infos = $("#mod-infos")
             for (let modId in json) {

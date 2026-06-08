@@ -3,6 +3,7 @@ import { CrowdinOperates } from "./CrowdinOperates.js";
 import { LocalMod } from "./LocalMods.js";
 import { CrowdinZipFile } from "./CrowdinZipFile.js";
 import type { RemoteManifestMods } from "./RemoteMods.js";
+import { WEB_ROOT } from "./mods.js";
 
 function sleep(ms:number) {
   return new Promise((resolve) => {
@@ -71,7 +72,8 @@ async function generate_pages_from_zip(){
     const mods = LocalMod.getMods()
 
     const manifest: RemoteManifestMods = {
-
+        crowdinUpdatedAt: (await CrowdinOperates.getInstance()).updatedAt,
+        mods: {}
     }
     for(let mod of mods){
         await mod.handleCrowdinZip(crowninZip, manifest)
@@ -80,8 +82,27 @@ async function generate_pages_from_zip(){
 }
 
 async function gen_pages(){
+    let force_update = process.env.CROWDIN_TOKEN
+    console.log("Running... force update is ", force_update)
+    if(!force_update){
+        let remote_manifest:RemoteManifestMods = (await fetch(WEB_ROOT + "/manifest.json")).json() as any
+        if(remote_manifest.crowdinUpdatedAt == (await CrowdinOperates.getInstance()).updatedAt){
+            console.log("we don't need update.")
+            if(process.env.GITHUB_OUTPUT){
+                console.log("Write stop to github output.")
+                writeFileSync(process.env.GITHUB_OUTPUT, "stop=true")
+            }
+            return
+        }
+    }
+
     await download_crowdin_zip()
     await generate_pages_from_zip()
+
+    if(process.env.GITHUB_OUTPUT){
+        console.log("Write stop to github output.")
+        writeFileSync(process.env.GITHUB_OUTPUT, "stop=false")
+    }
 }
 
 gen_pages()

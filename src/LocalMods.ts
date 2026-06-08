@@ -41,7 +41,7 @@ export class LocalMod {
         for (let l of this.localVersions) {
             await l.handleCrowdinZip(zip, modInfo)
         }
-        remote[this.modId] = modInfo
+        remote.mods[this.modId] = modInfo
     }
 
     saveRemote(): RemoteManifestMods {

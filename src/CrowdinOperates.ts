@@ -19,6 +19,7 @@ export class CrowdinOperates{
     corwdinClient:Client
     projectId:number = -1
     dirId = -1
+    updatedAt:string = ""
     constructor(){
         const credentials: Credentials = {
             token: process.env.CROWDIN_TOKEN || "",
@@ -39,6 +40,7 @@ export class CrowdinOperates{
         for(let proj of (await this.corwdinClient.projectsGroupsApi.listProjects()).data){
             if(proj.data.name == project_name){
                 this.projectId = proj.data.id
+                this.updatedAt = proj.data.updatedAt
             }
         }
         if(this.projectId == -1){
