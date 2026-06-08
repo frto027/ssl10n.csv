@@ -84,7 +84,7 @@ async function generate_pages_from_zip(){
 async function gen_pages(){
     let force_update = process.env.FORCE_UPDATE
     console.log("Running... force update is ", force_update)
-    if(!force_update){
+    if(force_update != 'true'){
         let remote_manifest:RemoteManifestMods = (await fetch(WEB_ROOT + "/manifest.json")).json() as any
         if(remote_manifest.crowdinUpdatedAt == (await CrowdinOperates.getInstance()).updatedAt){
             console.log("we don't need update.")
