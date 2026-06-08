@@ -232,11 +232,12 @@ class LocalVersionSource {
         })
         console.log("done")
         const hash = createHash("md5").update(csv_content).digest("hex")
-        fs.writeFileSync(`web_root/mods/${hash}.${this.version.crowdin_sync_file}`, csv_content)
+        const sync_file_name = `mods/${hash.substring(0,6)}.${this.version.crowdin_sync_file}`
+        fs.writeFileSync(`web_root/${sync_file_name}`, csv_content)
 
         remote.datas.push({
             version: this.version.version,
-            csv_url: `${WEB_ROOT}/mods/${hash}.${this.version.crowdin_sync_file}`,
+            csv_url: `${WEB_ROOT}/${sync_file_name}`,
             csv_name: this.version.crowdin_sync_file,
             md5:hash
         })
