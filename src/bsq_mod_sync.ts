@@ -15,6 +15,12 @@ export async function bsq_mod_sync(){
     let version_re = new RegExp("^\\d+\\.\\d+\\.\\d+")
     let infos = new Map<string, ModInfo>()
 
+    // we add a phantom mod called ModMetadata, so this fake mod id also can be localized.
+    infos.set("ModMetadata",{
+        name: "Mod Metadata",
+        desc: "The medatada information of mod name/descriptions."
+    })
+
     let csv_file = [["Polyglot","",""]]
     console.log("start bsq sync")
     for(const version in mods){
@@ -40,6 +46,7 @@ export async function bsq_mod_sync(){
             })
         }
     }
+
 
     for(let info of infos){
         csv_file.push(["MOD_META_" + info[0] + "_NAME","mod name of " + info[0],info[1].name])

@@ -1,4 +1,6 @@
 Polyglot,,
+MOD_META_ModMetadata_NAME,mod name of ModMetadata,Mod Metadata
+MOD_META_ModMetadata_DESC,mod description of ModMetadata,The medatada information of mod name/descriptions.
 MOD_META_airbuds-search_NAME,mod name of airbuds-search,Airbuds Search
 MOD_META_airbuds-search_DESC,mod description of airbuds-search,"Use your Airbuds (support Spotify, Apple Music, SoundCloud, Deezer, Amazon Music, Audiomack) listening history to quickly search BeatSaver maps!
 For better Japanese search results, install the 'Airbuds Search Kakasi' mod.

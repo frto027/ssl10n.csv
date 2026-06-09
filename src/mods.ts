@@ -17,8 +17,8 @@ export type ManifestMods = Record<string /* mod id */, ManifestModInfo>
 export const WEB_ROOT = "https://frto027.github.io/ssl10n.csv"
 
 export const ModDatabase:ManifestMods = {
-    "ModMetaData": {
-        name: "ModMetaData",
+    "ModMetadata": {
+        name: "ModMetadata",
         datas: [
             {
                 version: "*",
