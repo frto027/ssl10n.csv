@@ -25,8 +25,8 @@ export const ModDatabase:ManifestMods = {
                 csv_url: "N/A",
                 disable_csv_downlad: true,
                 key_prefix: "MOD_META_",
-                csv_local: "mods/ModMetaData.csv",
-                crowdin_sync_file: "ModMetaData.csv",
+                csv_local: "mods/ModMetadata.csv",
+                crowdin_sync_file: "ModMetadata.csv",
             }
         ]
     },

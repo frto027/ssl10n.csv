@@ -46,7 +46,7 @@ export async function bsq_mod_sync(){
         csv_file.push(["MOD_META_" + info[0] + "_DESC","",info[1].desc])
     }
 
-    writeFileSync("mods/ModMetaData.csv", stringify(csv_file, {
+    writeFileSync("mods/ModMetadata.csv", stringify(csv_file, {
         record_delimiter:"windows"
     }));
 }
