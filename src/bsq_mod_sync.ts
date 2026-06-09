@@ -2,6 +2,7 @@
 
 import { stringify } from "csv-stringify/sync"
 import { writeFileSync } from "node:fs"
+import * as semver from "semver"
 
 interface ModInfo{
     name:string,
@@ -11,11 +12,21 @@ interface ModInfo{
 export async function bsq_mod_sync(){
     let mods = await (await fetch("https://mods.bsquest.xyz/mods.json")).json()
 
+    let version_re = new RegExp("^\\d+\\.\\d+\\.\\d+")
     let infos = new Map<string, ModInfo>()
 
     let csv_file = [["Polyglot","",""]]
-
+    console.log("start bsq sync")
     for(const version in mods){
+        let ver_match = version_re.exec(version)
+        if(!ver_match)
+        {
+            console.log("version not match", version);
+            continue
+        }
+        if(semver.lt(ver_match[0], "1.40.8")){
+            continue
+        }
         for(const mod of mods[version]){
             let name = mod.name
             if(name == undefined || name == null || name == "")
@@ -39,5 +50,3 @@ export async function bsq_mod_sync(){
         record_delimiter:"windows"
     }));
 }
-
-bsq_mod_sync()
