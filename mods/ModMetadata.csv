@@ -1,163 +1,163 @@
 Polyglot,,
-MOD_META_airbuds-search_NAME,,Airbuds Search
-MOD_META_airbuds-search_DESC,,"Use your Airbuds (support Spotify, Apple Music, SoundCloud, Deezer, Amazon Music, Audiomack) listening history to quickly search BeatSaver maps!
+MOD_META_airbuds-search_NAME,mod name of airbuds-search,Airbuds Search
+MOD_META_airbuds-search_DESC,mod description of airbuds-search,"Use your Airbuds (support Spotify, Apple Music, SoundCloud, Deezer, Amazon Music, Audiomack) listening history to quickly search BeatSaver maps!
 For better Japanese search results, install the 'Airbuds Search Kakasi' mod.
 Forked from Tycho Bellers' original Spotify Search."
-MOD_META_airbuds-search-kakasi_NAME,,Airbuds Search Kakasi
-MOD_META_airbuds-search-kakasi_DESC,,Kakasi-based romaji adapter for Airbuds Search.
-MOD_META_AntiVertigo_NAME,,AntiVertigo
-MOD_META_AntiVertigo_DESC,,"Spawn a bigger base platform for people with vertigo so they can play comfortably, AntiVertigo v1.0.9"
-MOD_META_anytext_NAME,,AnyText
-MOD_META_anytext_DESC,,Change any text in the game
-MOD_META_BeatLeader_NAME,,BeatLeader
-MOD_META_BeatLeader_DESC,,"beatleader.com | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more"
-MOD_META_BeatTogether_NAME,,BeatTogether
-MOD_META_BeatTogether_DESC,,A multiplayer private server for the modding community. Supports crossplay between PC and Quest.
-MOD_META_BetterHaptics_NAME,,BetterHaptics
-MOD_META_BetterHaptics_DESC,,Reverts haptic feedback changes without breaking arc and chain notes.
-MOD_META_BetterSongSearch_NAME,,BetterSongSearch
-MOD_META_BetterSongSearch_DESC,,Search and download songs with a lot of filtering and sorting options and without frustration!
-MOD_META_bomb-qolorer_NAME,,Bomb Qolorer
-MOD_META_bomb-qolorer_DESC,,Allows you to override the default bomb color
-MOD_META_bsdc_NAME,,discord-presence
-MOD_META_bsdc_DESC,,"Allows discord rich presence to see which song you're playing, the current time, and much more."
-MOD_META_bsl_NAME,,Better Song List
-MOD_META_bsl_DESC,,Improvement upon SongBrowser with similiar functionality
-MOD_META_bsml_NAME,,BSML
-MOD_META_bsml_DESC,,Library that parses BeatSaber Markup Language to create UI elements
-MOD_META_BSNightcoreQuest_NAME,,BSNightcoreQuest
-MOD_META_BSNightcoreQuest_DESC,,Removes pitch compensation to make songs go nightcore on different speed
-MOD_META_bts-yeeter_NAME,,BTS Yeeter
-MOD_META_bts-yeeter_DESC,,Stops the annoying BTS characters from spawning whilst playing their maps.
-MOD_META_camera-utils_NAME,,CameraUtils
-MOD_META_camera-utils_DESC,,Modding library that standardizes the use of GameObject layers and provides tools for easier rendering pipeline modifications
-MOD_META_chatplex-sdk-bs_NAME,,ChatPlexSDK-BS
-MOD_META_chatplex-sdk-bs_DESC,,ChatPlex BeatSaber modding SDK (Dependence for other mods)
-MOD_META_chatui_NAME,,ChatUI
-MOD_META_chatui_DESC,,Shows your Twitch Chat Ingame
-MOD_META_christmas_NAME,,Christmas
-MOD_META_christmas_DESC,,Turn your Beat Saber into a christmas wonderland!
-MOD_META_chroma_NAME,,Chroma
-MOD_META_chroma_DESC,,Colors!
-MOD_META_ClockMod_NAME,,Clock Mod
-MOD_META_ClockMod_DESC,,Displays the time in game. Alternatively also the Battery Percentage
-MOD_META_CongXinJian_NAME,,CongXinJian
-MOD_META_CongXinJian_DESC,,help you to tweaking saber offset easier inside quest
-MOD_META_crashreporter_NAME,,CrashReporter
-MOD_META_crashreporter_DESC,,Automatically upload crashes.
-MOD_META_custom-json-data_NAME,,CustomJSONData
-MOD_META_custom-json-data_DESC,,Funny maps go brrr
-MOD_META_custom-types_NAME,,custom-types
-MOD_META_custom-types_DESC,,Core mod required for other mods to function!
-MOD_META_custommodels_NAME,,Custom Models
-MOD_META_custommodels_DESC,,"Lets you play with custom models for sabers, notes, and walls!"
-MOD_META_datakeeper_NAME,,PlayerDataKeeper
-MOD_META_datakeeper_DESC,,"Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost"
-MOD_META_discordrichpresence_NAME,,Discord Rich Presence
-MOD_META_discordrichpresence_DESC,,A Beat Saber Quest mod for displaying stats on Discord
-MOD_META_DlcSorter_NAME,,DlcSorter
-MOD_META_DlcSorter_DESC,,Sorts the DLC packs alphabetically.
-MOD_META_FakeId_NAME,,Fake ID
-MOD_META_FakeId_DESC,,Sets the player age to an adult.
-MOD_META_FasterScroll_NAME,,Faster Scroll
-MOD_META_FasterScroll_DESC,,Find your song faster with this mod.
-MOD_META_graphicstweaks_NAME,,GraphicsTweaks
-MOD_META_graphicstweaks_DESC,,Mod to unlock pc graphics settings on quest beat saber
-MOD_META_HeartBeatLanReceiver_NAME,,HeartBeatQuest
-MOD_META_HeartBeatLanReceiver_DESC,,"This mod displays and records your heart rate in the quest game. Supports multiple data sources including Bluetooth, HypeRate, Pulsoid and OSC. Bluetooth permition patch required if you use it."
-MOD_META_HitScoreVisualizer_NAME,,HitScoreVisualizer
-MOD_META_HitScoreVisualizer_DESC,,Changes the scores that pop up when you hit notes
-MOD_META_HitsoundTweaqs_NAME,,HitsoundTweaqs
-MOD_META_HitsoundTweaqs_DESC,,"Mod that adds more configurability to hitsounds, and fixes several base game bugs"
-MOD_META_hollywood_NAME,,Hollywood
-MOD_META_hollywood_DESC,,Record videos on your quest!
-MOD_META_imagecoverexpander_NAME,,ImageCoverExpander
-MOD_META_imagecoverexpander_DESC,,Expands the song artwork to cover the right side of the level select.
-MOD_META_imager_NAME,,Imager
-MOD_META_imager_DESC,,Create images & move them around | .jpg / .png / .gif files are all supported. You can either put them in: ModData/com.beatgames.beatsaber/Mods/Imager/Images or you can use the mod’s download feature!
-MOD_META_IntroSkip_NAME,,Intro Skip
-MOD_META_IntroSkip_DESC,,Skip the intro and outro of maps
-MOD_META_jdfixer_NAME,,JDFixer
-MOD_META_jdfixer_DESC,,"Configure your Jump Distance, Speed, and more with ultra precision!"
-MOD_META_lapiz_NAME,,Lapiz
-MOD_META_lapiz_DESC,,Lapiz makes modders' lives easier by exposing utilities to them cleanly. This mod does nothing on its own.
-MOD_META_MappingExtensions_NAME,,Mapping Extensions
-MOD_META_MappingExtensions_DESC,,"This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu."
-MOD_META_menuvisualizers_NAME,,MenuVisualizer
-MOD_META_menuvisualizers_DESC,,Adds a visualizer to the menu
-MOD_META_metacore_NAME,,MetaCore
-MOD_META_metacore_DESC,,Provides way too many utilities for mod developers
-MOD_META_mod-list_NAME,,ModList
-MOD_META_mod-list_DESC,,Displays your installed mods inside the game and gives you a warning prompt upon starting the game to tell you if a mod failed to load.
-MOD_META_morebuttons_NAME,,MoreButtons
-MOD_META_morebuttons_DESC,,Overloads your keyboard!
-MOD_META_multiplayer-core_NAME,,MultiplayerCore
-MOD_META_multiplayer-core_DESC,,Adds custom songs to Beat Saber Multiplayer.
-MOD_META_multiplayer-extensions_NAME,,MultiplayerExtensions
-MOD_META_multiplayer-extensions_DESC,,"Port of MultiplayerExtensions, the PC mod that adds extra features to multiplayer"
-MOD_META_NoodleExtensions_NAME,,NoodleExtensions
-MOD_META_NoodleExtensions_DESC,,This adds a host of new things you can do with your maps. Original mod for PC by Aeroluna. Contributions by Fern and Sc2ad.
-MOD_META_NoPromo_NAME,,NoPromo
-MOD_META_NoPromo_DESC,,Hides the promo banner on the main screen.
-MOD_META_Nya_NAME,,Nya
-MOD_META_Nya_DESC,,Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!
-MOD_META_paper2_scotland2_NAME,,Paperlog Scotland2
-MOD_META_paper2_scotland2_DESC,,Paperlog Bootstrapper for Scotland2 modloader
-MOD_META_particletuner_NAME,,ParticleTuner
-MOD_META_particletuner_DESC,,Lets you tweak individual particle settings! And has rainbow particles!
-MOD_META_Play3rdPer_NAME,,Third Person Mod
-MOD_META_Play3rdPer_DESC,,Play in 3rd Person!
-MOD_META_playlistcore_NAME,,PlaylistCore
-MOD_META_playlistcore_DESC,,Loads playlists and provides lots of functionality to other mods.
-MOD_META_playlistdownloader_NAME,,PlaylistDownloader
-MOD_META_playlistdownloader_DESC,,Download playlists from websites directly in game
-MOD_META_playlistmanager_NAME,,PlaylistManager
-MOD_META_playlistmanager_DESC,,Manage all your songs and playlists!
-MOD_META_PracticeTweaqs_NAME,,PracticeTweaqs
-MOD_META_PracticeTweaqs_DESC,,Various improvements to the practice gamemode
-MOD_META_qbeatsaberplus-gametweaker_NAME,,QBeatSaberPlus-GameTweaker
-MOD_META_qbeatsaberplus-gametweaker_DESC,,Feel good!
-MOD_META_qbeatsaberplus-menumusic_NAME,,QBeatSaberPlus-MenuMusic
-MOD_META_qbeatsaberplus-menumusic_DESC,,Feel good!
-MOD_META_qbeatsaberplus-multiplayer_NAME,,QBeatSaberPlus-Multiplayer
-MOD_META_qbeatsaberplus-multiplayer_DESC,,Feel good!
-MOD_META_qbeatsaberplus-notetweaker_NAME,,QBeatSaberPlus-NoteTweaker
-MOD_META_qbeatsaberplus-notetweaker_DESC,,Feel good!
-MOD_META_qounters++_NAME,,Qounters++
-MOD_META_qounters++_DESC,,Add endlessly customizable counters to your ingame UI!
-MOD_META_QuestSounds_NAME,,QuestSounds
-MOD_META_QuestSounds_DESC,,Allows users to change their sfx sounds and in-game music easily!
-MOD_META_qustommenu_NAME,,Qustom Menu
-MOD_META_qustommenu_DESC,,"Customize the Beat Saber menu, add custom banners and quotes"
-MOD_META_RandomSongPicker_NAME,,RandomSongPicker
-MOD_META_RandomSongPicker_DESC,,"Adds a button, that picks a random song out of the current list"
-MOD_META_RecentlyPlayed_NAME,,RecentlyPlayed
-MOD_META_RecentlyPlayed_DESC,,Adds a history tab that displays the most recently played maps
-MOD_META_redbar_NAME,,RedBar
-MOD_META_redbar_DESC,,Changes the color of the health bar according to your health
-MOD_META_replay_NAME,,Replay
-MOD_META_replay_DESC,,Watch back your best scores!
-MOD_META_scorepercentage_NAME,,Score Percentage
-MOD_META_scorepercentage_DESC,,shows extra information after completing a level
-MOD_META_simplesabers_NAME,,SimpleSabers
-MOD_META_simplesabers_DESC,,Tweak the default saber and trail
-MOD_META_slicedetails_NAME,,Slice Details
-MOD_META_slicedetails_DESC,,View extra information about your swings
-MOD_META_smoothedcontroller_NAME,,Smoothed Controller
-MOD_META_smoothedcontroller_DESC,,"Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc."
-MOD_META_songchartvisualizer_NAME,,SongChartVisualizer
-MOD_META_songchartvisualizer_DESC,,
-MOD_META_songcore_NAME,,SongCore
-MOD_META_songcore_DESC,,"Adds songloading, map requirement handling and related utilities to the game."
-MOD_META_songdownloader_NAME,,SongDownloader
-MOD_META_songdownloader_DESC,,Download Custom Songs at Runtime
-MOD_META_spotify-search_NAME,,Spotify Search
-MOD_META_spotify-search_DESC,,Access your Spotify playlists and quickly search for matching custom maps!
-MOD_META_too-many-fireworks_NAME,,TooManyFireworks
-MOD_META_too-many-fireworks_DESC,,Don't think there's enough fireworks? This mod adds a variety of settings that can make fireworks powerful enough to explode the game itself!
-MOD_META_tracks_NAME,,Tracks
-MOD_META_tracks_DESC,,Animation for Noodle and Chroma. Requires CustomJSONData. Don't delete
-MOD_META_transitions_NAME,,Transitions
-MOD_META_transitions_DESC,,Speed up or remove boring transitions in the game
-MOD_META_unicode_NAME,,Unicode
-MOD_META_unicode_DESC,,"Finally, 𒈙"
+MOD_META_airbuds-search-kakasi_NAME,mod name of airbuds-search-kakasi,Airbuds Search Kakasi
+MOD_META_airbuds-search-kakasi_DESC,mod description of airbuds-search-kakasi,Kakasi-based romaji adapter for Airbuds Search.
+MOD_META_AntiVertigo_NAME,mod name of AntiVertigo,AntiVertigo
+MOD_META_AntiVertigo_DESC,mod description of AntiVertigo,"Spawn a bigger base platform for people with vertigo so they can play comfortably, AntiVertigo v1.0.9"
+MOD_META_anytext_NAME,mod name of anytext,AnyText
+MOD_META_anytext_DESC,mod description of anytext,Change any text in the game
+MOD_META_BeatLeader_NAME,mod name of BeatLeader,BeatLeader
+MOD_META_BeatLeader_DESC,mod description of BeatLeader,"beatleader.com | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more"
+MOD_META_BeatTogether_NAME,mod name of BeatTogether,BeatTogether
+MOD_META_BeatTogether_DESC,mod description of BeatTogether,A multiplayer private server for the modding community. Supports crossplay between PC and Quest.
+MOD_META_BetterHaptics_NAME,mod name of BetterHaptics,BetterHaptics
+MOD_META_BetterHaptics_DESC,mod description of BetterHaptics,Reverts haptic feedback changes without breaking arc and chain notes.
+MOD_META_BetterSongSearch_NAME,mod name of BetterSongSearch,BetterSongSearch
+MOD_META_BetterSongSearch_DESC,mod description of BetterSongSearch,Search and download songs with a lot of filtering and sorting options and without frustration!
+MOD_META_bomb-qolorer_NAME,mod name of bomb-qolorer,Bomb Qolorer
+MOD_META_bomb-qolorer_DESC,mod description of bomb-qolorer,Allows you to override the default bomb color
+MOD_META_bsdc_NAME,mod name of bsdc,discord-presence
+MOD_META_bsdc_DESC,mod description of bsdc,"Allows discord rich presence to see which song you're playing, the current time, and much more."
+MOD_META_bsl_NAME,mod name of bsl,Better Song List
+MOD_META_bsl_DESC,mod description of bsl,Improvement upon SongBrowser with similiar functionality
+MOD_META_bsml_NAME,mod name of bsml,BSML
+MOD_META_bsml_DESC,mod description of bsml,Library that parses BeatSaber Markup Language to create UI elements
+MOD_META_BSNightcoreQuest_NAME,mod name of BSNightcoreQuest,BSNightcoreQuest
+MOD_META_BSNightcoreQuest_DESC,mod description of BSNightcoreQuest,Removes pitch compensation to make songs go nightcore on different speed
+MOD_META_bts-yeeter_NAME,mod name of bts-yeeter,BTS Yeeter
+MOD_META_bts-yeeter_DESC,mod description of bts-yeeter,Stops the annoying BTS characters from spawning whilst playing their maps.
+MOD_META_camera-utils_NAME,mod name of camera-utils,CameraUtils
+MOD_META_camera-utils_DESC,mod description of camera-utils,Modding library that standardizes the use of GameObject layers and provides tools for easier rendering pipeline modifications
+MOD_META_chatplex-sdk-bs_NAME,mod name of chatplex-sdk-bs,ChatPlexSDK-BS
+MOD_META_chatplex-sdk-bs_DESC,mod description of chatplex-sdk-bs,ChatPlex BeatSaber modding SDK (Dependence for other mods)
+MOD_META_chatui_NAME,mod name of chatui,ChatUI
+MOD_META_chatui_DESC,mod description of chatui,Shows your Twitch Chat Ingame
+MOD_META_christmas_NAME,mod name of christmas,Christmas
+MOD_META_christmas_DESC,mod description of christmas,Turn your Beat Saber into a christmas wonderland!
+MOD_META_chroma_NAME,mod name of chroma,Chroma
+MOD_META_chroma_DESC,mod description of chroma,Colors!
+MOD_META_ClockMod_NAME,mod name of ClockMod,Clock Mod
+MOD_META_ClockMod_DESC,mod description of ClockMod,Displays the time in game. Alternatively also the Battery Percentage
+MOD_META_CongXinJian_NAME,mod name of CongXinJian,CongXinJian
+MOD_META_CongXinJian_DESC,mod description of CongXinJian,help you to tweaking saber offset easier inside quest
+MOD_META_crashreporter_NAME,mod name of crashreporter,CrashReporter
+MOD_META_crashreporter_DESC,mod description of crashreporter,Automatically upload crashes.
+MOD_META_custom-json-data_NAME,mod name of custom-json-data,CustomJSONData
+MOD_META_custom-json-data_DESC,mod description of custom-json-data,Funny maps go brrr
+MOD_META_custom-types_NAME,mod name of custom-types,custom-types
+MOD_META_custom-types_DESC,mod description of custom-types,Core mod required for other mods to function!
+MOD_META_custommodels_NAME,mod name of custommodels,Custom Models
+MOD_META_custommodels_DESC,mod description of custommodels,"Lets you play with custom models for sabers, notes, and walls!"
+MOD_META_datakeeper_NAME,mod name of datakeeper,PlayerDataKeeper
+MOD_META_datakeeper_DESC,mod description of datakeeper,"Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost"
+MOD_META_discordrichpresence_NAME,mod name of discordrichpresence,Discord Rich Presence
+MOD_META_discordrichpresence_DESC,mod description of discordrichpresence,A Beat Saber Quest mod for displaying stats on Discord
+MOD_META_DlcSorter_NAME,mod name of DlcSorter,DlcSorter
+MOD_META_DlcSorter_DESC,mod description of DlcSorter,Sorts the DLC packs alphabetically.
+MOD_META_FakeId_NAME,mod name of FakeId,Fake ID
+MOD_META_FakeId_DESC,mod description of FakeId,Sets the player age to an adult.
+MOD_META_FasterScroll_NAME,mod name of FasterScroll,Faster Scroll
+MOD_META_FasterScroll_DESC,mod description of FasterScroll,Find your song faster with this mod.
+MOD_META_graphicstweaks_NAME,mod name of graphicstweaks,GraphicsTweaks
+MOD_META_graphicstweaks_DESC,mod description of graphicstweaks,Mod to unlock pc graphics settings on quest beat saber
+MOD_META_HeartBeatLanReceiver_NAME,mod name of HeartBeatLanReceiver,HeartBeatQuest
+MOD_META_HeartBeatLanReceiver_DESC,mod description of HeartBeatLanReceiver,"This mod displays and records your heart rate in the quest game. Supports multiple data sources including Bluetooth, HypeRate, Pulsoid and OSC. Bluetooth permition patch required if you use it."
+MOD_META_HitScoreVisualizer_NAME,mod name of HitScoreVisualizer,HitScoreVisualizer
+MOD_META_HitScoreVisualizer_DESC,mod description of HitScoreVisualizer,Changes the scores that pop up when you hit notes
+MOD_META_HitsoundTweaqs_NAME,mod name of HitsoundTweaqs,HitsoundTweaqs
+MOD_META_HitsoundTweaqs_DESC,mod description of HitsoundTweaqs,"Mod that adds more configurability to hitsounds, and fixes several base game bugs"
+MOD_META_hollywood_NAME,mod name of hollywood,Hollywood
+MOD_META_hollywood_DESC,mod description of hollywood,Record videos on your quest!
+MOD_META_imagecoverexpander_NAME,mod name of imagecoverexpander,ImageCoverExpander
+MOD_META_imagecoverexpander_DESC,mod description of imagecoverexpander,Expands the song artwork to cover the right side of the level select.
+MOD_META_imager_NAME,mod name of imager,Imager
+MOD_META_imager_DESC,mod description of imager,Create images & move them around | .jpg / .png / .gif files are all supported. You can either put them in: ModData/com.beatgames.beatsaber/Mods/Imager/Images or you can use the mod’s download feature!
+MOD_META_IntroSkip_NAME,mod name of IntroSkip,Intro Skip
+MOD_META_IntroSkip_DESC,mod description of IntroSkip,Skip the intro and outro of maps
+MOD_META_jdfixer_NAME,mod name of jdfixer,JDFixer
+MOD_META_jdfixer_DESC,mod description of jdfixer,"Configure your Jump Distance, Speed, and more with ultra precision!"
+MOD_META_lapiz_NAME,mod name of lapiz,Lapiz
+MOD_META_lapiz_DESC,mod description of lapiz,Lapiz makes modders' lives easier by exposing utilities to them cleanly. This mod does nothing on its own.
+MOD_META_MappingExtensions_NAME,mod name of MappingExtensions,Mapping Extensions
+MOD_META_MappingExtensions_DESC,mod description of MappingExtensions,"This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu."
+MOD_META_menuvisualizers_NAME,mod name of menuvisualizers,MenuVisualizer
+MOD_META_menuvisualizers_DESC,mod description of menuvisualizers,Adds a visualizer to the menu
+MOD_META_metacore_NAME,mod name of metacore,MetaCore
+MOD_META_metacore_DESC,mod description of metacore,Provides way too many utilities for mod developers
+MOD_META_mod-list_NAME,mod name of mod-list,ModList
+MOD_META_mod-list_DESC,mod description of mod-list,Displays your installed mods inside the game and gives you a warning prompt upon starting the game to tell you if a mod failed to load.
+MOD_META_morebuttons_NAME,mod name of morebuttons,MoreButtons
+MOD_META_morebuttons_DESC,mod description of morebuttons,Overloads your keyboard!
+MOD_META_multiplayer-core_NAME,mod name of multiplayer-core,MultiplayerCore
+MOD_META_multiplayer-core_DESC,mod description of multiplayer-core,Adds custom songs to Beat Saber Multiplayer.
+MOD_META_multiplayer-extensions_NAME,mod name of multiplayer-extensions,MultiplayerExtensions
+MOD_META_multiplayer-extensions_DESC,mod description of multiplayer-extensions,"Port of MultiplayerExtensions, the PC mod that adds extra features to multiplayer"
+MOD_META_NoodleExtensions_NAME,mod name of NoodleExtensions,NoodleExtensions
+MOD_META_NoodleExtensions_DESC,mod description of NoodleExtensions,This adds a host of new things you can do with your maps. Original mod for PC by Aeroluna. Contributions by Fern and Sc2ad.
+MOD_META_NoPromo_NAME,mod name of NoPromo,NoPromo
+MOD_META_NoPromo_DESC,mod description of NoPromo,Hides the promo banner on the main screen.
+MOD_META_Nya_NAME,mod name of Nya,Nya
+MOD_META_Nya_DESC,mod description of Nya,Beat Saber mod for displaying nya-tastic images from various anime themed web APIs!
+MOD_META_paper2_scotland2_NAME,mod name of paper2_scotland2,Paperlog Scotland2
+MOD_META_paper2_scotland2_DESC,mod description of paper2_scotland2,Paperlog Bootstrapper for Scotland2 modloader
+MOD_META_particletuner_NAME,mod name of particletuner,ParticleTuner
+MOD_META_particletuner_DESC,mod description of particletuner,Lets you tweak individual particle settings! And has rainbow particles!
+MOD_META_Play3rdPer_NAME,mod name of Play3rdPer,Third Person Mod
+MOD_META_Play3rdPer_DESC,mod description of Play3rdPer,Play in 3rd Person!
+MOD_META_playlistcore_NAME,mod name of playlistcore,PlaylistCore
+MOD_META_playlistcore_DESC,mod description of playlistcore,Loads playlists and provides lots of functionality to other mods.
+MOD_META_playlistdownloader_NAME,mod name of playlistdownloader,PlaylistDownloader
+MOD_META_playlistdownloader_DESC,mod description of playlistdownloader,Download playlists from websites directly in game
+MOD_META_playlistmanager_NAME,mod name of playlistmanager,PlaylistManager
+MOD_META_playlistmanager_DESC,mod description of playlistmanager,Manage all your songs and playlists!
+MOD_META_PracticeTweaqs_NAME,mod name of PracticeTweaqs,PracticeTweaqs
+MOD_META_PracticeTweaqs_DESC,mod description of PracticeTweaqs,Various improvements to the practice gamemode
+MOD_META_qbeatsaberplus-gametweaker_NAME,mod name of qbeatsaberplus-gametweaker,QBeatSaberPlus-GameTweaker
+MOD_META_qbeatsaberplus-gametweaker_DESC,mod description of qbeatsaberplus-gametweaker,Feel good!
+MOD_META_qbeatsaberplus-menumusic_NAME,mod name of qbeatsaberplus-menumusic,QBeatSaberPlus-MenuMusic
+MOD_META_qbeatsaberplus-menumusic_DESC,mod description of qbeatsaberplus-menumusic,Feel good!
+MOD_META_qbeatsaberplus-multiplayer_NAME,mod name of qbeatsaberplus-multiplayer,QBeatSaberPlus-Multiplayer
+MOD_META_qbeatsaberplus-multiplayer_DESC,mod description of qbeatsaberplus-multiplayer,Feel good!
+MOD_META_qbeatsaberplus-notetweaker_NAME,mod name of qbeatsaberplus-notetweaker,QBeatSaberPlus-NoteTweaker
+MOD_META_qbeatsaberplus-notetweaker_DESC,mod description of qbeatsaberplus-notetweaker,Feel good!
+MOD_META_qounters++_NAME,mod name of qounters++,Qounters++
+MOD_META_qounters++_DESC,mod description of qounters++,Add endlessly customizable counters to your ingame UI!
+MOD_META_QuestSounds_NAME,mod name of QuestSounds,QuestSounds
+MOD_META_QuestSounds_DESC,mod description of QuestSounds,Allows users to change their sfx sounds and in-game music easily!
+MOD_META_qustommenu_NAME,mod name of qustommenu,Qustom Menu
+MOD_META_qustommenu_DESC,mod description of qustommenu,"Customize the Beat Saber menu, add custom banners and quotes"
+MOD_META_RandomSongPicker_NAME,mod name of RandomSongPicker,RandomSongPicker
+MOD_META_RandomSongPicker_DESC,mod description of RandomSongPicker,"Adds a button, that picks a random song out of the current list"
+MOD_META_RecentlyPlayed_NAME,mod name of RecentlyPlayed,RecentlyPlayed
+MOD_META_RecentlyPlayed_DESC,mod description of RecentlyPlayed,Adds a history tab that displays the most recently played maps
+MOD_META_redbar_NAME,mod name of redbar,RedBar
+MOD_META_redbar_DESC,mod description of redbar,Changes the color of the health bar according to your health
+MOD_META_replay_NAME,mod name of replay,Replay
+MOD_META_replay_DESC,mod description of replay,Watch back your best scores!
+MOD_META_scorepercentage_NAME,mod name of scorepercentage,Score Percentage
+MOD_META_scorepercentage_DESC,mod description of scorepercentage,shows extra information after completing a level
+MOD_META_simplesabers_NAME,mod name of simplesabers,SimpleSabers
+MOD_META_simplesabers_DESC,mod description of simplesabers,Tweak the default saber and trail
+MOD_META_slicedetails_NAME,mod name of slicedetails,Slice Details
+MOD_META_slicedetails_DESC,mod description of slicedetails,View extra information about your swings
+MOD_META_smoothedcontroller_NAME,mod name of smoothedcontroller,Smoothed Controller
+MOD_META_smoothedcontroller_DESC,mod description of smoothedcontroller,"Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc."
+MOD_META_songchartvisualizer_NAME,mod name of songchartvisualizer,SongChartVisualizer
+MOD_META_songchartvisualizer_DESC,mod description of songchartvisualizer,
+MOD_META_songcore_NAME,mod name of songcore,SongCore
+MOD_META_songcore_DESC,mod description of songcore,"Adds songloading, map requirement handling and related utilities to the game."
+MOD_META_songdownloader_NAME,mod name of songdownloader,SongDownloader
+MOD_META_songdownloader_DESC,mod description of songdownloader,Download Custom Songs at Runtime
+MOD_META_spotify-search_NAME,mod name of spotify-search,Spotify Search
+MOD_META_spotify-search_DESC,mod description of spotify-search,Access your Spotify playlists and quickly search for matching custom maps!
+MOD_META_too-many-fireworks_NAME,mod name of too-many-fireworks,TooManyFireworks
+MOD_META_too-many-fireworks_DESC,mod description of too-many-fireworks,Don't think there's enough fireworks? This mod adds a variety of settings that can make fireworks powerful enough to explode the game itself!
+MOD_META_tracks_NAME,mod name of tracks,Tracks
+MOD_META_tracks_DESC,mod description of tracks,Animation for Noodle and Chroma. Requires CustomJSONData. Don't delete
+MOD_META_transitions_NAME,mod name of transitions,Transitions
+MOD_META_transitions_DESC,mod description of transitions,Speed up or remove boring transitions in the game
+MOD_META_unicode_NAME,mod name of unicode,Unicode
+MOD_META_unicode_DESC,mod description of unicode,"Finally, 𒈙"
