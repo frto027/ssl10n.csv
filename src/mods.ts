@@ -1,34 +1,3 @@
-export interface LocalizedModNames{
-    English?:string
-    French?:string
-    Spanish?:string
-    German?:string
-    Italian?:string
-    Portuguese_Brazil?:string
-    Portuguese?:string
-    Russian?:string
-    Greek?:string
-    Turkish?:string
-    Danish?:string
-    Norwegian?:string
-    Swedish?:string
-    Dutch?:string
-    Polish?:string
-    Finnish?:string
-    Japanese?:string
-    Simplified_Chinese?:string
-    Traditional_Chinese?:string
-    Korean?:string
-    Czech?:string
-    Hungarian?:string
-    Romanian?:string
-    Thai?:string
-    Bulgarian?:string
-    Hebrew?:string
-    Arabic?:string
-    Bosnian?:string
-}
-
 export interface ManifestVersionSource{
     version:string,
     key_prefix:string,
@@ -39,7 +8,7 @@ export interface ManifestVersionSource{
 }
 
 export interface ManifestModInfo{
-    name?:LocalizedModNames | string,
+    name?: string,
     datas:Array<ManifestVersionSource>,
 }
 

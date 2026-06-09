@@ -1,7 +1,5 @@
-import type { LocalizedModNames } from "./mods.js"
-
 export interface RemoteModInfo{
-    name:LocalizedModNames | string
+    name:string
     datas:Array<RemoteVersionSource>
 }
 
