@@ -17,6 +17,19 @@ export type ManifestMods = Record<string /* mod id */, ManifestModInfo>
 export const WEB_ROOT = "https://frto027.github.io/ssl10n.csv"
 
 export const ModDatabase:ManifestMods = {
+    "ModMetaData": {
+        name: "ModMetaData",
+        datas: [
+            {
+                version: "*",
+                csv_url: "N/A",
+                disable_csv_downlad: true,
+                key_prefix: "MOD_META_",
+                csv_local: "mods/ModMetaData.csv",
+                crowdin_sync_file: "ModMetaData.csv",
+            }
+        ]
+    },
     "Loqolizer" /* this is mod id */ : {
         name: "Loqolizer",
         datas: [
