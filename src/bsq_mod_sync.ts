@@ -54,6 +54,7 @@ export async function bsq_mod_sync(){
     for(let info of infos){
         csv_file.push(["QMOD_META_" + info[0] + "_NAME",`mod name of ${info[0]} (${info[1].latest_seen_game_ver})`,info[1].name])
         csv_file.push(["QMOD_META_" + info[0] + "_DESC",`mod description of ${info[0]} (${info[1].latest_seen_game_ver})`,info[1].desc])
+        csv_file.push(["QMOD_META_" + info[0] + "_TRANSLATOR",`mod translators of ${info[0]} (${info[1].latest_seen_game_ver}), add your name here if you translate this mod.`,""])
     }
 
     writeFileSync("mods/ModMetadata.csv", stringify(csv_file, {
