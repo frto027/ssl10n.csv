@@ -105,7 +105,7 @@ class LocalVersionSource {
                 }
                 data.shift()
             }
-            for(let i=1;i<data.length;i++){
+            for(let i=0;i<data.length;i++){
                 if(data[i]!.length > 0){
                     const first = data[i]![0]!
                     if(first == ""){
