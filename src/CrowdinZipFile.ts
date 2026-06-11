@@ -13,7 +13,7 @@ export class CrowdinZipFile{
 
         const entries = await zip.entries()
 
-        const re = new RegExp("^([a-zA-Z0-9-]+)/mods/([^/]+\\.csv)$")
+        const re = new RegExp("^([a-zA-Z0-9-]+)/qmods/([^/]+\\.csv)$")
 
         for(const fileName in entries){
             const entry = entries[fileName]!
@@ -21,7 +21,7 @@ export class CrowdinZipFile{
                 continue
             const m = re.exec(fileName)
             if(!m){
-                console.log(`can't handle ${fileName}`)
+                console.log(`can't handle ${fileName}, ignore it`)
                 continue
             }
             const langCode = m[1]
