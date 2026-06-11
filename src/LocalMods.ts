@@ -99,6 +99,7 @@ class LocalVersionSource {
                 if(data[0]!.length > 0){
                     const firstText = data[0]![0]
                     if(firstText == "polyglot" || firstText == "Polyglot" || firstText == "PolyMaster"){
+                        data.shift()
                         break
                     }
                 }
