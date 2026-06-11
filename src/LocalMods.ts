@@ -6,6 +6,7 @@ import type { RemoteManifestMods, RemoteModInfo } from "./RemoteMods.js"
 import { CrowdinZipFile } from "./CrowdinZipFile.js"
 import { stringify } from "csv-stringify/sync"
 import { createHash } from "node:crypto"
+import { parse } from "csv-parse/sync"
 
 export class LocalMod {
     modId: string
@@ -88,32 +89,35 @@ class LocalVersionSource {
             if(csv_bytes.length > 3 && csv_bytes[0] == 0xef && csv_bytes[1] == 0xbb && csv_bytes[2] == 0xbf){
                 csv_bytes = csv_bytes.subarray(3)
             }
+
+            
+
             let csv_str = csv_bytes.toString("utf-8")
-            let csv_lines = csv_str.split("\n")
 
-            while(csv_lines.length > 0){
-                const line = csv_lines[0]
-                if(line?.startsWith("polyglot,") || line?.startsWith("Polyglot,") || line?.startsWith("PolyMaster,")){
-                    csv_lines.shift()
-                    break
-                }
-                csv_lines.shift()
-            }
-            for(let i=0;i<csv_lines.length;i++){
-                if(csv_lines[i]!.indexOf(",") <0)
-                    continue
-                if(csv_lines[i]!.startsWith('"')){
-                    if(!csv_lines[i]!.startsWith('"'+this.version.key_prefix)){
-                        csv_lines[i] = '"' + this.version.key_prefix + csv_lines[i]?.substring(1)
-                    }
-                }else{
-                    if(!csv_lines[i]!.startsWith(this.version.key_prefix)){
-                        csv_lines[i] = this.version.key_prefix + csv_lines[i]
+            const data = parse(csv_str)
+            while(data.length > 0){
+                if(data[0]!.length > 0){
+                    const firstText = data[0]![0]
+                    if(firstText == "polyglot" || firstText == "Polyglot" || firstText == "PolyMaster"){
+                        break
                     }
                 }
-
+                data.shift()
             }
-            csv_str = csv_lines.join("\n")
+            for(let i=1;i<data.length;i++){
+                if(data[i]!.length > 0){
+                    const first = data[i]![0]!
+                    if(first == ""){
+                        continue
+                    }
+                    if(!first.startsWith(this.version.key_prefix)){
+                        data[i]![0] = this.version.key_prefix + first
+                    }
+                }
+            }
+            csv_str = stringify(data,{
+                            record_delimiter:"windows"
+            })
 
             let c = await CrowdinOperates.getInstance()
             let files = await c.corwdinClient.sourceFilesApi.listProjectFiles(c.projectId, {
