@@ -3,7 +3,7 @@
 import { Client, type Credentials, SourceFilesModel } from '@crowdin/crowdin-api-client';
 import { existsSync, readFileSync } from 'node:fs';
 
-let project_name = "beatsaber-sslocalization"
+let project_name = "SiraLocalizer"
 
 export class CrowdinOperates{
     static instance?:CrowdinOperates
@@ -48,7 +48,7 @@ export class CrowdinOperates{
         }
 
         for(let dir of (await this.corwdinClient.sourceFilesApi.listProjectDirectories(this.projectId)).data){
-            if(dir.data.name == 'mods'){
+            if(dir.data.name == 'qmods'){
                 this.dirId = dir.data.id
             }
         }
