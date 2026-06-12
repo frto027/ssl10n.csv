@@ -3,7 +3,7 @@
 If you want make this repo works for your own crowdin project.
 
 - create a crowdin project.
-- update project name in "src\CrowdinOperates.ts", you also need create a folder called `mods` in your crowdin project.
+- update project name in "src\CrowdinOperates.ts", you also need create a folder called `qmods` in your crowdin project.
 - configure some languages for your crowdin.
 - get your crowdin token from their website
 - setup a file called `.crowdin_token` for local test.
