@@ -86,6 +86,22 @@ async function gen_pages(){
     let force_update = process.env.FORCE_UPDATE
     console.log("Running... force update is ", force_update)
 
+    if(existsSync(".forceUpdate")){
+        force_update = 'true'
+    }
+    if(force_update != 'true'){
+        let remote_manifest:RemoteManifestMods = (await (await fetch(WEB_ROOT + "/manifest.json")).json()) as any
+        if(remote_manifest.crowdinUpdatedAt == (await CrowdinOperates.getInstance()).updatedAt){
+            console.log("we don't need update.")
+            if(process.env.GITHUB_OUTPUT){
+                console.log("Write stop to github output.")
+                writeFileSync(process.env.GITHUB_OUTPUT, "stop=true")
+            }
+            return
+        }
+    }
+
+
     await download_crowdin_zip()
     await generate_pages_from_zip()
 

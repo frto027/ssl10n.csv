@@ -1,5 +1,6 @@
 dist
 node_modules
 .crowdin_token
+.forceUpdate
 web_root/manifest.json
 web_root/mods
