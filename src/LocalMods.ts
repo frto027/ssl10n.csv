@@ -13,6 +13,8 @@ export class LocalMod {
     info: ManifestModInfo
 
     localVersions: Array<LocalVersionSource> = []
+
+    changed = false
     constructor(modId: string, info: ManifestModInfo) {
         this.modId = modId
         this.info = info
@@ -25,6 +27,8 @@ export class LocalMod {
     async syncLocal() {
         for (let l of this.localVersions) {
             await l.syncLocal()
+            if(l.changed)
+                this.changed = true
         }
     }
 
@@ -60,6 +64,7 @@ export class LocalMod {
 
 class LocalVersionSource {
     version: ManifestVersionSource
+    changed = false
     constructor(version: ManifestVersionSource) {
         this.version = version
     }
@@ -72,6 +77,15 @@ class LocalVersionSource {
         }
         try {
             let bytes = await (await fetch(this.version.csv_url)).bytes();
+            if(!fs.existsSync(this.version.csv_local)){
+                this.changed = true
+            }else{
+                let old_bytes = fs.readFileSync(this.version.csv_local)
+                if(!old_bytes.equals(bytes)){
+                    this.changed = true
+                }
+            }
+            
             fs.writeFileSync(this.version.csv_local, bytes)
             console.log(`done, ${bytes.length} bytes downloaded`)
         } catch (e) {
