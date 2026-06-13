@@ -2,10 +2,12 @@ import { bsq_mod_sync } from "./bsq_mod_sync.js";
 import { LocalMod } from "./LocalMods.js";
 import * as fs from "node:fs"
 async function do_action(){
-    await bsq_mod_sync();
-
     let changed_mods = []
-
+    
+    if(await bsq_mod_sync()){
+        changed_mods.push("ModMetadata")
+    }
+    
     for(let mod of LocalMod.getMods()){
         await mod.syncLocal();
         if(mod.changed){
@@ -18,8 +20,8 @@ async function do_action(){
         if(changed_mods.length > 0){
             mod_titles = "(" + changed_mods.join(",") + ")"   
         }
-        mod_titles.replaceAll('"',"")
-        fs.writeFileSync(process.env.GITHUB_OUTPUT, 'mods="'+mod_titles + '"')
+        mod_titles = mod_titles.replaceAll('"',"").replaceAll("\n","").replaceAll("\r","")
+        fs.writeFileSync(process.env.GITHUB_OUTPUT, 'mods='+mod_titles)
     }
 }
 

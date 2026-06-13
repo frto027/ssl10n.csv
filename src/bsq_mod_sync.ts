@@ -1,7 +1,7 @@
 // download mod data from bsq_mods and generate a metadata csv file for every mods
 
 import { stringify } from "csv-stringify/sync"
-import { writeFileSync } from "node:fs"
+import { readFileSync, writeFileSync } from "node:fs"
 import * as semver from "semver"
 
 interface ModInfo{
@@ -10,7 +10,7 @@ interface ModInfo{
     latest_seen_game_ver:string
 }
 
-export async function bsq_mod_sync(){
+export async function bsq_mod_sync():Promise<boolean /* true means updated */>{
     let mods = await (await fetch("https://mods.bsquest.xyz/mods.json")).json()
 
     let version_re = new RegExp("^\\d+\\.\\d+\\.\\d+")
@@ -57,7 +57,13 @@ export async function bsq_mod_sync(){
         csv_file.push(["QMOD_META_" + info[0] + "_TRANSLATOR",`mod translators of ${info[0]} (${info[1].latest_seen_game_ver}), add your name here if you translate this mod.`,""])
     }
 
-    writeFileSync("mods/ModMetadata.csv", stringify(csv_file, {
+    let output = Buffer.from(stringify(csv_file, {
         record_delimiter:"windows"
-    }));
+    }), "utf-8")
+
+    let ret = readFileSync("mods/ModMetadata.csv").equals(output) == false
+
+    writeFileSync("mods/ModMetadata.csv", output);
+
+    return ret
 }
