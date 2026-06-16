@@ -45,21 +45,21 @@ jobs:
           FORCE_UPDATE: ${{github.event.inputs.force_update}}
         run: npm install && npm run gen_page
       
-      - name: Generate Crowdin Contributors
-        if: steps.gen-page.outputs.stop != 'true'
-        uses: andrii-bodnar/action-crowdin-contributors@c0bdc9a1e54b6a64e59f14c08b7432f69406910f
-        with:
-          svg: true
-          svg_output_path: 'web_root/crowdin_contributors.svg'
-          contributors_per_line: 8
-          max_contributors: 32
-          image_size: 50
-          min_words_contributed: 3
-          files: Readme.md
+      # - name: Generate Crowdin Contributors
+      #   if: steps.gen-page.outputs.stop != 'true'
+      #   uses: andrii-bodnar/action-crowdin-contributors@c0bdc9a1e54b6a64e59f14c08b7432f69406910f
+      #   with:
+      #     svg: true
+      #     svg_output_path: 'web_root/crowdin_contributors.svg'
+      #     contributors_per_line: 8
+      #     max_contributors: 32
+      #     image_size: 50
+      #     min_words_contributed: 3
+      #     files: Readme.md
             
-        env:
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJ_ID }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
+      #   env:
+      #     CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJ_ID }}
+      #     CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
 
       - name: Upload artifact
         if: steps.gen-page.outputs.stop != 'true'
