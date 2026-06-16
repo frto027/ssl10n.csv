@@ -1,10 +1,10 @@
 # SSL10n Localization Guide
 
 This is a localization solution for beatsaber quest mods.
+<!--
 
 Crowdin is an awesome translate platform! We have a mod translate project there. 
 
-<!--
 Translate contributors from the crowdin project:  
 ![svg](https://frto027.github.io/ssl10n.csv/crowdin_contributors.svg) -->
 
