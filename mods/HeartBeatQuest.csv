@@ -1,4 +1,5 @@
-﻿Polyglot,desc,english
+﻿csv2hpp_config_key_start=HEART_BEAT_QUEST_
+Polyglot,desc,english
 HEART_BEAT_QUEST_enabled,,enabled(need restart)
 HEART_BEAT_QUEST_heart_config,,HEART Config
 HEART_BEAT_QUEST_heart_devices,,HEART Devices
