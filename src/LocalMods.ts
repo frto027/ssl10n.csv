@@ -26,15 +26,25 @@ export class LocalMod {
 
     async syncLocal() {
         for (let l of this.localVersions) {
-            await l.syncLocal()
-            if(l.changed)
-                this.changed = true
+            try{
+                await l.syncLocal()
+                if(l.changed)
+                    this.changed = true
+            }catch(e){
+                console.error("Can't handle mod " + this.modId + ":" + l.version)
+                console.log(e)
+            }
         }
     }
 
     async uploadCrowdin() {
         for (let l of this.localVersions) {
-            await l.uploadCrowdin()
+            try{
+                await l.uploadCrowdin()
+            }catch(e){
+                console.error("Can't handle mod " + this.modId + ":" + l.version)
+                console.log(e)
+            }
         }
     }
 
