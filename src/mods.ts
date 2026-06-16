@@ -51,7 +51,7 @@ export const ModDatabase:ManifestMods = {
         datas: [
             {
                 version:"*",
-                csv_url: "https://raw.githubusercontent.com/frto027/HeartBeatQuest/refs/heads/ssl10n/assets/HeartBeatQuest.csv",
+                csv_url: "https://raw.githubusercontent.com/frto027/HeartBeatQuest/refs/heads/master/localize.csv",
                 key_prefix: "HEART_BEAT_QUEST_",
                 csv_local: "mods/HeartBeatQuest.csv",
                 crowdin_sync_file:"HeartBeatQuest.csv",
