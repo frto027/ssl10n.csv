@@ -1,12 +1,6 @@
 ﻿csv2hpp_config_key_start=HEART_BEAT_QUEST_,,
 Polyglot,desc,english
 HEART_BEAT_QUEST_enabled,,enabled(need restart)
-HEART_BEAT_QUEST_heart_config,,HEART Config
-HEART_BEAT_QUEST_heart_devices,,HEART Devices
-HEART_BEAT_QUEST_heart_senders,,HEART Senders
-HEART_BEAT_QUEST_heart_osc_senders,,HEART OSC Senders
-HEART_BEAT_QUEST_hyperate,,HypeRate
-HEART_BEAT_QUEST_pulsoid,,Pulsoid
 HEART_BEAT_QUEST_hyperate_reset,,RESET
 HEART_BEAT_QUEST_hyperate_save_and_connect,,SAVE AND CONNECT
 HEART_BEAT_QUEST_hyperate_input_hint,,"https://app.hyperate.io/<color=""green"">xxx</color><-input this"
@@ -68,7 +62,7 @@ HEART_BEAT_QUEST_pulsoid_done,,Done
 HEART_BEAT_QUEST_pulsoid_cancel,,Cancel
 HEART_BEAT_QUEST_pulsoid_token,,Pulsoid Token
 HEART_BEAT_QUEST_pulsoid_clear_token,,Clear and Reset
-HEART_BEAT_QUEST_your_setthings_is_in_another_menu,"this is a mimic of FC's super mario brother. Thank you Mario! But our princess is in another castle!",Thank you Player! But data-source config is in another menu!
+HEART_BEAT_QUEST_your_setthings_is_in_another_menu,this is a mimic of FC's super mario brother. Thank you Mario! But our princess is in another castle!,Thank you Player! But data-source config is in another menu!
 HEART_BEAT_QUEST_ui_not_avaliable_in_qounter,,Heart UI not avaliable in qounters. Please add HeartRate text source at qounters.
 HEART_BEAT_QUEST_ignore_qounters,,Ignore Qounters++ mod
 HEART_BEAT_QUEST_ignore_qounters_hint,,"please enable this if Qounters++ is disabled. If enabled, Qounters++ may not work with this mod."
@@ -78,3 +72,13 @@ HEART_BEAT_QUEST_mdns_name_no,,mDns n/a
 HEART_BEAT_QUEST_mdns_name_title,,mDns name:
 HEART_BEAT_QUEST_setthings_build_with,,build with:
 HEART_BEAT_QUEST_QOUNTERSPP_INIT,,Qounters++ API Initialized
+HEART_BEAT_QUEST_SETTHINGS_MAIN_TITLE,,HeartBeatQuest Main Config
+HEART_BEAT_QUEST_SETTHINGS_MAIN_BUTTON,,HeartBeatQuest
+HEART_BEAT_QUEST_SETTHINGS_HYPERATE_TITLE,,HypeRate Connection
+HEART_BEAT_QUEST_SETTHINGS_HYPERATE_BUTTON,,HypeRate
+HEART_BEAT_QUEST_SETTHINGS_BLE_TITLE,,Bluetooth Connection
+HEART_BEAT_QUEST_SETTHINGS_BLE_BUTTON,,HeartRate BLE
+HEART_BEAT_QUEST_SETTHINGS_PULSOID_TITLE,,Pulsoid Connection
+HEART_BEAT_QUEST_SETTHINGS_PULSOID_BUTTON,,Pulsoid
+HEART_BEAT_QUEST_SETTHINGS_OSC_TITLE,,OSC Configuration
+HEART_BEAT_QUEST_SETTHINGS_OSC_BUTTON,,HeartRate OSC
