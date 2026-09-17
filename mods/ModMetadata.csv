@@ -82,8 +82,8 @@ QMOD_META_custom-types_TRANSLATOR,"mod translators of custom-types, add your nam
 QMOD_META_custommodels_NAME,mod name of custommodels (1.40.8),Custom Models
 QMOD_META_custommodels_DESC,mod description of custommodels (1.40.8),"Lets you play with custom models for sabers, notes, and walls!"
 QMOD_META_custommodels_TRANSLATOR,"mod translators of custommodels, add your name here if you translate this mod.",
-QMOD_META_datakeeper_NAME,mod name of datakeeper (1.40.8),PlayerDataKeeper
-QMOD_META_datakeeper_DESC,mod description of datakeeper (1.40.8),"Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost"
+QMOD_META_datakeeper_NAME,mod name of datakeeper (1.45.0),PlayerDataKeeper
+QMOD_META_datakeeper_DESC,mod description of datakeeper (1.45.0),"Preserves your player data (scores, controller offset, etc) between updates or any other time it might be lost"
 QMOD_META_datakeeper_TRANSLATOR,"mod translators of datakeeper, add your name here if you translate this mod.",
 QMOD_META_discordrichpresence_NAME,mod name of discordrichpresence (1.40.8),Discord Rich Presence
 QMOD_META_discordrichpresence_DESC,mod description of discordrichpresence (1.40.8),A Beat Saber Quest mod for displaying stats on Discord
@@ -244,8 +244,8 @@ QMOD_META_too-many-fireworks_TRANSLATOR,"mod translators of too-many-fireworks, 
 QMOD_META_tracks_NAME,mod name of tracks (1.40.8),Tracks
 QMOD_META_tracks_DESC,mod description of tracks (1.40.8),Animation for Noodle and Chroma. Requires CustomJSONData. Don't delete
 QMOD_META_tracks_TRANSLATOR,"mod translators of tracks, add your name here if you translate this mod.",
-QMOD_META_transitions_NAME,mod name of transitions (1.40.8),Transitions
-QMOD_META_transitions_DESC,mod description of transitions (1.40.8),Speed up or remove boring transitions in the game
+QMOD_META_transitions_NAME,mod name of transitions (1.45.0),Transitions
+QMOD_META_transitions_DESC,mod description of transitions (1.45.0),Speed up or remove boring transitions in the game
 QMOD_META_transitions_TRANSLATOR,"mod translators of transitions, add your name here if you translate this mod.",
 QMOD_META_tricksaberlite_NAME,mod name of tricksaberlite (1.40.8),TrickSaber Lite
 QMOD_META_tricksaberlite_DESC,mod description of tricksaberlite (1.40.8),Perform spins and throws with your sabers!
