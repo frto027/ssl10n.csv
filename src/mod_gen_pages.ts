@@ -12,27 +12,8 @@ function sleep(ms:number) {
 }
 
 
-async function download_crowdin_zip(){
+async function download_crowdin_zip(build_id:number){
     let c = await CrowdinOperates.getInstance()
-
-    let build_id = -1
-    for(let build of (await c.corwdinClient.translationsApi.listProjectBuilds(c.projectId)).data){
-        if(new Date().getTime() - new Date(build.data.finishedAt).getTime() < 6 /* hours */ * 60 * 60 * 1000){
-            build_id = build.data.id
-            console.log("recent build found, use this. the build finishit at: " + build.data.finishedAt )
-            break
-        }
-    }
-
-
-    if(build_id == -1){
-        console.log("recent build id not found, will build first.")
-        build_id = (await c.corwdinClient.translationsApi.buildProject(c.projectId, {
-            skipUntranslatedStrings: true,
-            exportApprovedOnly: false
-        })).data.id
-        console.log("build started, id=", build_id)
-    }
 
     let build_status = (await c.corwdinClient.translationsApi.checkBuildStatus(c.projectId, build_id)).data.status
     if(build_status == "inProgress"){
@@ -63,7 +44,7 @@ async function download_crowdin_zip(){
     console.log("file saved")
 }
 
-async function generate_pages_from_zip(){
+async function generate_pages_from_zip(build_id:number){
     let crowninZip = new CrowdinZipFile()
     await crowninZip.init("dist/crowdin.zip")
     
@@ -72,7 +53,7 @@ async function generate_pages_from_zip(){
     const mods = LocalMod.getMods()
 
     const manifest: RemoteManifestMods = {
-        crowdinUpdatedAt: (await CrowdinOperates.getInstance()).updatedAt,
+        crowdinBuildId: build_id.toString(),
         mods: {},
         manifestTimestamp: (new Date()).toISOString()
     }
@@ -84,26 +65,42 @@ async function generate_pages_from_zip(){
 
 async function gen_pages(){
     let force_update = process.env.FORCE_UPDATE
-    console.log("Running... force update is ", force_update)
+    // console.log("Running... force update is ", force_update)
 
-    if(existsSync(".forceUpdate")){
-        force_update = 'true'
-    }
-    if(force_update != 'true'){
-        let remote_manifest:RemoteManifestMods = (await (await fetch(WEB_ROOT + "/manifest.json")).json()) as any
-        if(remote_manifest.crowdinUpdatedAt == (await CrowdinOperates.getInstance()).updatedAt){
-            console.log("we don't need update.")
-            if(process.env.GITHUB_OUTPUT){
-                console.log("Write stop to github output.")
-                writeFileSync(process.env.GITHUB_OUTPUT, "stop=true")
-            }
-            return
+    // if(existsSync(".forceUpdate")){
+    //     force_update = 'true'
+    // }
+    // if(force_update != 'true'){
+    //     let remote_manifest:RemoteManifestMods = (await (await fetch(WEB_ROOT + "/manifest.json")).json()) as any
+    //     if(remote_manifest.crowdinUpdatedAt == (await CrowdinOperates.getInstance()).updatedAt){
+    //         console.log("we don't need update.")
+    //         if(process.env.GITHUB_OUTPUT){
+    //             console.log("Write stop to github output.")
+    //             writeFileSync(process.env.GITHUB_OUTPUT, "stop=true")
+    //         }
+    //         return
+    //     }
+    // }
+    let remote_manifest:RemoteManifestMods = (await (await fetch(WEB_ROOT + "/manifest.json")).json()) as any
+    let c = await CrowdinOperates.getInstance()
+
+    let build_id = (await c.corwdinClient.translationsApi.buildProject(c.projectId, {
+            skipUntranslatedStrings: true,
+            exportApprovedOnly: false
+        })).data.id
+    console.log("latest build id = ", build_id);
+    if(remote_manifest.crowdinBuildId == build_id.toString()){
+        console.log("we don't need update")
+        if(process.env.GITHUB_OUTPUT){
+            console.log("Write stop to github output.")
+            writeFileSync(process.env.GITHUB_OUTPUT, "stop=true")
         }
+        return
     }
+    
 
-
-    await download_crowdin_zip()
-    await generate_pages_from_zip()
+    await download_crowdin_zip(build_id)
+    await generate_pages_from_zip(build_id)
 
     if(process.env.GITHUB_OUTPUT){
         console.log("Write stop to github output.")
