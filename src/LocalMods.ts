@@ -72,6 +72,89 @@ export class LocalMod {
     }
 }
 
+function mergeMods(oldMod:Uint8Array<ArrayBuffer>, newMod:Uint8Array<ArrayBuffer>) :
+    Uint8Array<ArrayBuffer> | "not_changed" 
+{
+    try{
+        if(oldMod.length > 3 && oldMod[0] == 0xef && oldMod[1] == 0xbb && oldMod[2] == 0xbf)
+            oldMod = oldMod.subarray(3)
+        if(newMod.length > 3 && newMod[0] == 0xef && newMod[1] == 0xbb && newMod[2] == 0xbf)
+            newMod = newMod.subarray(3)
+        let old_csv = parse(oldMod)
+        let new_csv = parse(newMod)
+        let new_csv_more = []
+        let new_csv_line_elem_count = 0
+        let new_keys = new Set<string>()
+
+        for(let i=0,started = false; i < new_csv.length; i++){
+            if(new_csv[i]!.length > 0){
+                const firstText = new_csv[i]![0]
+                if(firstText == "polyglot" || firstText == "Polyglot" || firstText == "PolyMaster"){
+                    started = true
+                    continue
+                }
+            }
+            if(!started)
+                continue
+            if(new_csv[i]!.length > 0){
+                const firstText = new_csv[i]![0]
+                if(firstText && firstText.length > 0){
+                    new_keys.add(firstText)
+                    new_csv_line_elem_count = new_csv[i]!.length
+                }
+            }
+        }
+
+        for(let i=0,started = false; i < old_csv.length; i++){
+            if(old_csv[i]!.length > 0){
+                const firstText = old_csv[i]![0]
+                if(firstText == "polyglot" || firstText == "Polyglot" || firstText == "PolyMaster"){
+                    started = true
+                    continue
+                }
+            }
+            if(!started)
+                continue
+            if(old_csv[i]!.length > 0){
+                const firstText = old_csv[i]![0]
+                if(firstText && firstText.length > 0){
+                    if(!new_keys.has(firstText)){
+                        const to_be_append = old_csv[i]!
+                        if(to_be_append.length > new_csv_line_elem_count)
+                            to_be_append.length = new_csv_line_elem_count
+                        else{
+                            while(to_be_append.length < new_csv_line_elem_count)
+                                to_be_append.push("")
+                        }
+                        new_csv_more.push(to_be_append)
+                    }
+                }
+            }
+        }
+
+        if(new_csv_more.length == 0)
+            return "not_changed"
+        console.log(new_csv)
+        for(let i=0;i<new_csv_more.length;i++){
+            let this_line = new_csv_more[i]!
+            if(this_line.length > 2 && this_line[1]!.indexOf("deprecated") == -1){
+                this_line[1] = "(deprecated when csv update) " + this_line[1]
+            }
+            new_csv.push(new_csv_more[i]!)
+        }
+
+        let csv_str = stringify(new_csv, {
+            record_delimiter: "windows"
+        })
+        let encoder = new TextEncoder()
+        return encoder.encode(csv_str)
+
+
+    }catch(e){
+        console.error("can't parse mods", e)
+        return "not_changed"
+    }
+}
 class LocalVersionSource {
     version: ManifestVersionSource
     changed = false
@@ -91,6 +174,15 @@ class LocalVersionSource {
                 this.changed = true
             }else{
                 let old_bytes = fs.readFileSync(this.version.csv_local)
+
+                if(true /* merge mode */){
+                    let merged = mergeMods(old_bytes, bytes)
+                    if(merged != "not_changed"){
+                        this.changed = true
+                        bytes = merged
+                    }
+                }
+
                 if(!old_bytes.equals(bytes)){
                     this.changed = true
                 }
