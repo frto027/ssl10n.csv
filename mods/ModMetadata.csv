@@ -20,13 +20,13 @@ QMOD_META_BeatLeader_NAME,mod name of BeatLeader (1.45.3),BeatLeader
 QMOD_META_BeatLeader_DESC,mod description of BeatLeader (1.45.3),"beatleader.com | In-game leaderboards for custom and OST maps | Score replays | Clans, events, playlists and much more"
 QMOD_META_BeatLeader_TRANSLATOR,"mod translators of BeatLeader, add your name here if you translate this mod.",
 QMOD_META_beatsync_NAME,mod name of beatsync (1.45.3),BeatSync
-QMOD_META_beatsync_DESC,mod description of beatsync (1.45.3),Sync beatmaps from PC over to Quest
+QMOD_META_beatsync_DESC,mod description of beatsync (1.45.3),Syncs beatmaps from PC over to Quest
 QMOD_META_beatsync_TRANSLATOR,"mod translators of beatsync, add your name here if you translate this mod.",
 QMOD_META_BeatTogether_NAME,mod name of BeatTogether (1.40.8),BeatTogether
 QMOD_META_BeatTogether_DESC,mod description of BeatTogether (1.40.8),A multiplayer private server for the modding community. Supports crossplay between PC and Quest.
 QMOD_META_BeatTogether_TRANSLATOR,"mod translators of BeatTogether, add your name here if you translate this mod.",
-QMOD_META_BetterHaptics_NAME,mod name of BetterHaptics (1.41.0),BetterHaptics
-QMOD_META_BetterHaptics_DESC,mod description of BetterHaptics (1.41.0),Reverts haptic feedback changes without breaking arc and chain notes.
+QMOD_META_BetterHaptics_NAME,mod name of BetterHaptics (1.45.3),BetterHaptics
+QMOD_META_BetterHaptics_DESC,mod description of BetterHaptics (1.45.3),"Full control over haptics for UI, note types, and more"
 QMOD_META_BetterHaptics_TRANSLATOR,"mod translators of BetterHaptics, add your name here if you translate this mod.",
 QMOD_META_BetterSongSearch_NAME,mod name of BetterSongSearch (1.45.3),BetterSongSearch
 QMOD_META_BetterSongSearch_DESC,mod description of BetterSongSearch (1.45.3),Search and download songs with a lot of filtering and sorting options and without frustration!
@@ -46,17 +46,17 @@ QMOD_META_BSMapLoader_TRANSLATOR,"mod translators of BSMapLoader, add your name 
 QMOD_META_bsml_NAME,mod name of bsml (1.45.3),BSML
 QMOD_META_bsml_DESC,mod description of bsml (1.45.3),Library that parses BeatSaber Markup Language to create UI elements
 QMOD_META_bsml_TRANSLATOR,"mod translators of bsml, add your name here if you translate this mod.",
-QMOD_META_BSNightcoreQuest_NAME,mod name of BSNightcoreQuest (1.40.8),BSNightcoreQuest
-QMOD_META_BSNightcoreQuest_DESC,mod description of BSNightcoreQuest (1.40.8),Removes pitch compensation to make songs go nightcore on different speed
+QMOD_META_BSNightcoreQuest_NAME,mod name of BSNightcoreQuest (1.45.3),BSNightcoreQuest
+QMOD_META_BSNightcoreQuest_DESC,mod description of BSNightcoreQuest (1.45.3),Removes pitch compensation to make songs go nightcore on different speed
 QMOD_META_BSNightcoreQuest_TRANSLATOR,"mod translators of BSNightcoreQuest, add your name here if you translate this mod.",
 QMOD_META_bts-yeeter_NAME,mod name of bts-yeeter (1.45.3),BTS Yeeter
 QMOD_META_bts-yeeter_DESC,mod description of bts-yeeter (1.45.3),Stops the annoying BTS characters from spawning whilst playing their maps.
 QMOD_META_bts-yeeter_TRANSLATOR,"mod translators of bts-yeeter, add your name here if you translate this mod.",
-QMOD_META_camera-utils_NAME,mod name of camera-utils (1.40.8),CameraUtils
-QMOD_META_camera-utils_DESC,mod description of camera-utils (1.40.8),Modding library that standardizes the use of GameObject layers and provides tools for easier rendering pipeline modifications
+QMOD_META_camera-utils_NAME,mod name of camera-utils (1.45.3),CameraUtils
+QMOD_META_camera-utils_DESC,mod description of camera-utils (1.45.3),Modding library that standardizes the use of GameObject layers and provides tools for easier rendering pipeline modifications
 QMOD_META_camera-utils_TRANSLATOR,"mod translators of camera-utils, add your name here if you translate this mod.",
 QMOD_META_CategoryTabs_NAME,mod name of CategoryTabs (1.40.8),CategoryTabs
-QMOD_META_CategoryTabs_DESC,mod description of CategoryTabs (1.40.8),"Adds tabs to the solo category bar and pages them when they do not fit, CategoryTabs v0.1.1"
+QMOD_META_CategoryTabs_DESC,mod description of CategoryTabs (1.40.8),Adds tabs to the solo category bar and pages them when they do not fit
 QMOD_META_CategoryTabs_TRANSLATOR,"mod translators of CategoryTabs, add your name here if you translate this mod.",
 QMOD_META_chatplex-sdk-bs_NAME,mod name of chatplex-sdk-bs (1.40.8),ChatPlexSDK-BS
 QMOD_META_chatplex-sdk-bs_DESC,mod description of chatplex-sdk-bs (1.40.8),ChatPlex BeatSaber modding SDK (Dependence for other mods)
@@ -76,8 +76,8 @@ QMOD_META_ClockMod_TRANSLATOR,"mod translators of ClockMod, add your name here i
 QMOD_META_CongXinJian_NAME,mod name of CongXinJian (1.40.8),CongXinJian
 QMOD_META_CongXinJian_DESC,mod description of CongXinJian (1.40.8),help you to tweaking saber offset easier inside quest
 QMOD_META_CongXinJian_TRANSLATOR,"mod translators of CongXinJian, add your name here if you translate this mod.",
-QMOD_META_crashreporter_NAME,mod name of crashreporter (1.40.8),CrashReporter
-QMOD_META_crashreporter_DESC,mod description of crashreporter (1.40.8),Automatically upload crashes.
+QMOD_META_crashreporter_NAME,mod name of crashreporter (1.45.3),CrashReporter
+QMOD_META_crashreporter_DESC,mod description of crashreporter (1.45.3),Automatically upload crashes.
 QMOD_META_crashreporter_TRANSLATOR,"mod translators of crashreporter, add your name here if you translate this mod.",
 QMOD_META_custom-json-data_NAME,mod name of custom-json-data (1.40.8),CustomJSONData
 QMOD_META_custom-json-data_DESC,mod description of custom-json-data (1.40.8),Funny maps go brrr
@@ -118,8 +118,8 @@ QMOD_META_graphicstweaks_TRANSLATOR,"mod translators of graphicstweaks, add your
 QMOD_META_halloween_NAME,mod name of halloween (1.40.8),Halloween
 QMOD_META_halloween_DESC,mod description of halloween (1.40.8),Happy Halloween! Transform your Beat Saber menu into a spooky graveyard with falling autumn leaves.
 QMOD_META_halloween_TRANSLATOR,"mod translators of halloween, add your name here if you translate this mod.",
-QMOD_META_HeartBeatLanReceiver_NAME,mod name of HeartBeatLanReceiver (1.40.8),HeartBeatQuest
-QMOD_META_HeartBeatLanReceiver_DESC,mod description of HeartBeatLanReceiver (1.40.8),"This mod displays and records your heart rate in the quest game. Supports multiple data sources including Bluetooth, HypeRate, Pulsoid and OSC. Bluetooth permition patch required if you use it."
+QMOD_META_HeartBeatLanReceiver_NAME,mod name of HeartBeatLanReceiver (1.45.3),HeartBeatQuest
+QMOD_META_HeartBeatLanReceiver_DESC,mod description of HeartBeatLanReceiver (1.45.3),"This mod displays and records your heart rate in the quest game. Supports multiple data sources including Bluetooth, HypeRate, Pulsoid and OSC. Bluetooth permition patch required if you use it."
 QMOD_META_HeartBeatLanReceiver_TRANSLATOR,"mod translators of HeartBeatLanReceiver, add your name here if you translate this mod.",
 QMOD_META_HidePacks_NAME,mod name of HidePacks (1.40.8),HidePacks
 QMOD_META_HidePacks_DESC,mod description of HidePacks (1.40.8),"Hides official level packs in the solo menu, HidePacks v0.1.1"
@@ -133,8 +133,8 @@ QMOD_META_HitsoundTweaqs_TRANSLATOR,"mod translators of HitsoundTweaqs, add your
 QMOD_META_hollywood_NAME,mod name of hollywood (1.40.8),Hollywood
 QMOD_META_hollywood_DESC,mod description of hollywood (1.40.8),Record videos on your quest!
 QMOD_META_hollywood_TRANSLATOR,"mod translators of hollywood, add your name here if you translate this mod.",
-QMOD_META_imagecoverexpander_NAME,mod name of imagecoverexpander (1.40.8),ImageCoverExpander
-QMOD_META_imagecoverexpander_DESC,mod description of imagecoverexpander (1.40.8),Expands the song artwork to cover the right side of the level select.
+QMOD_META_imagecoverexpander_NAME,mod name of imagecoverexpander (1.45.3),ImageCoverExpander
+QMOD_META_imagecoverexpander_DESC,mod description of imagecoverexpander (1.45.3),Expands the song artwork to cover the right side of the level select.
 QMOD_META_imagecoverexpander_TRANSLATOR,"mod translators of imagecoverexpander, add your name here if you translate this mod.",
 QMOD_META_imager_NAME,mod name of imager (1.40.8),Imager
 QMOD_META_imager_DESC,mod description of imager (1.40.8),Create images & move them around | .jpg / .png / .gif files are all supported. You can either put them in: ModData/com.beatgames.beatsaber/Mods/Imager/Images or you can use the mod’s download feature!
@@ -220,11 +220,11 @@ QMOD_META_QuestSounds_TRANSLATOR,"mod translators of QuestSounds, add your name 
 QMOD_META_qustommenu_NAME,mod name of qustommenu (1.40.8),Qustom Menu
 QMOD_META_qustommenu_DESC,mod description of qustommenu (1.40.8),"Customize the Beat Saber menu, add custom banners and quotes"
 QMOD_META_qustommenu_TRANSLATOR,"mod translators of qustommenu, add your name here if you translate this mod.",
-QMOD_META_RandomSongPicker_NAME,mod name of RandomSongPicker (1.40.8),RandomSongPicker
-QMOD_META_RandomSongPicker_DESC,mod description of RandomSongPicker (1.40.8),"Adds a button, that picks a random song out of the current list"
+QMOD_META_RandomSongPicker_NAME,mod name of RandomSongPicker (1.45.3),RandomSongPicker
+QMOD_META_RandomSongPicker_DESC,mod description of RandomSongPicker (1.45.3),"Adds a button, that picks a random song out of the current list"
 QMOD_META_RandomSongPicker_TRANSLATOR,"mod translators of RandomSongPicker, add your name here if you translate this mod.",
-QMOD_META_RecentlyPlayed_NAME,mod name of RecentlyPlayed (1.40.8),RecentlyPlayed
-QMOD_META_RecentlyPlayed_DESC,mod description of RecentlyPlayed (1.40.8),Adds a history tab that displays the most recently played maps
+QMOD_META_RecentlyPlayed_NAME,mod name of RecentlyPlayed (1.45.3),RecentlyPlayed
+QMOD_META_RecentlyPlayed_DESC,mod description of RecentlyPlayed (1.45.3),Adds a history tab that displays the most recently played maps
 QMOD_META_RecentlyPlayed_TRANSLATOR,"mod translators of RecentlyPlayed, add your name here if you translate this mod.",
 QMOD_META_redbar_NAME,mod name of redbar (1.40.8),RedBar
 QMOD_META_redbar_DESC,mod description of redbar (1.40.8),Changes the color of the health bar according to your health
@@ -247,8 +247,8 @@ QMOD_META_slicedetails_TRANSLATOR,"mod translators of slicedetails, add your nam
 QMOD_META_smoothedcontroller_NAME,mod name of smoothedcontroller (1.45.3),Smoothed Controller
 QMOD_META_smoothedcontroller_DESC,mod description of smoothedcontroller (1.45.3),"Smoothes your Controller position while in menus to make it less shaky, making the UI easier to use, etc."
 QMOD_META_smoothedcontroller_TRANSLATOR,"mod translators of smoothedcontroller, add your name here if you translate this mod.",
-QMOD_META_snipefeed_NAME,mod name of snipefeed (1.40.8),SnipeFeed
-QMOD_META_snipefeed_DESC,mod description of snipefeed (1.40.8),See your own BeatLeader profile + your following feed in Beat Saber under your game selection window in the mods tab!
+QMOD_META_snipefeed_NAME,mod name of snipefeed (1.45.3),SnipeFeed
+QMOD_META_snipefeed_DESC,mod description of snipefeed (1.45.3),See your BeatLeader following feed in-game: your friends' latest scores in one list so you know exactly which maps to snipe.
 QMOD_META_snipefeed_TRANSLATOR,"mod translators of snipefeed, add your name here if you translate this mod.",
 QMOD_META_songchartvisualizer_NAME,mod name of songchartvisualizer (1.40.8),SongChartVisualizer
 QMOD_META_songchartvisualizer_DESC,mod description of songchartvisualizer (1.40.8),
@@ -265,6 +265,12 @@ QMOD_META_spotify-search_TRANSLATOR,"mod translators of spotify-search, add your
 QMOD_META_SqoreToggler_NAME,mod name of SqoreToggler (1.40.8),SqoreToggler
 QMOD_META_SqoreToggler_DESC,mod description of SqoreToggler (1.40.8),Toggle score submissions with the flip of a switch!
 QMOD_META_SqoreToggler_TRANSLATOR,"mod translators of SqoreToggler, add your name here if you translate this mod.",
+QMOD_META_studiosync_NAME,mod name of studiosync (1.40.8),Studio Sync
+QMOD_META_studiosync_DESC,mod description of studiosync (1.40.8),"Companion mod for Playlist Studio. Send and edit playlists from your browser; they show up on your headset on their own, with missing songs downloaded. Favorites sync both ways."
+QMOD_META_studiosync_TRANSLATOR,"mod translators of studiosync, add your name here if you translate this mod.",
+QMOD_META_thanksgiving_NAME,mod name of thanksgiving (1.40.8),Thanksgiving
+QMOD_META_thanksgiving_DESC,mod description of thanksgiving (1.40.8),"Transform your Beat Saber menu with golden harvest lighting, seasonal decorations, and falling leaves!"
+QMOD_META_thanksgiving_TRANSLATOR,"mod translators of thanksgiving, add your name here if you translate this mod.",
 QMOD_META_too-many-fireworks_NAME,mod name of too-many-fireworks (1.40.8),TooManyFireworks
 QMOD_META_too-many-fireworks_DESC,mod description of too-many-fireworks (1.40.8),Don't think there's enough fireworks? This mod adds a variety of settings that can make fireworks powerful enough to explode the game itself!
 QMOD_META_too-many-fireworks_TRANSLATOR,"mod translators of too-many-fireworks, add your name here if you translate this mod.",
