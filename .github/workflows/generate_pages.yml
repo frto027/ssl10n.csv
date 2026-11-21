@@ -24,11 +24,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Separate upload from deployment to avoid artifact lookup races.
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -65,7 +62,14 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: 'web_root'
-          
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
