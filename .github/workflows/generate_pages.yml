@@ -4,10 +4,6 @@ name: Download crowdin and generate pages
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    inputs:
-      force_update:
-        type: boolean
-        description: Update page even if there is no crowdin update.
   schedule:
     - cron: '0 0 */1 * *'
 
@@ -39,7 +35,6 @@ jobs:
         id: gen-page
         env:
           CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
-          FORCE_UPDATE: ${{github.event.inputs.force_update}}
         run: npm install && npm run gen_page
       
       # - name: Generate Crowdin Contributors
