@@ -70,8 +70,8 @@ QMOD_META_christmas_TRANSLATOR,"mod translators of christmas, add your name here
 QMOD_META_chroma_NAME,mod name of chroma (1.40.8),Chroma
 QMOD_META_chroma_DESC,mod description of chroma (1.40.8),Colors!
 QMOD_META_chroma_TRANSLATOR,"mod translators of chroma, add your name here if you translate this mod.",
-QMOD_META_ClockMod_NAME,mod name of ClockMod (1.40.8),Clock Mod
-QMOD_META_ClockMod_DESC,mod description of ClockMod (1.40.8),Displays the time in game. Alternatively also the Battery Percentage
+QMOD_META_ClockMod_NAME,mod name of ClockMod (1.45.3),Clock Mod
+QMOD_META_ClockMod_DESC,mod description of ClockMod (1.45.3),Displays the time in game. Alternatively also the Battery Percentage
 QMOD_META_ClockMod_TRANSLATOR,"mod translators of ClockMod, add your name here if you translate this mod.",
 QMOD_META_CongXinJian_NAME,mod name of CongXinJian (1.40.8),CongXinJian
 QMOD_META_CongXinJian_DESC,mod description of CongXinJian (1.40.8),help you to tweaking saber offset easier inside quest
@@ -169,6 +169,9 @@ QMOD_META_multiplayer-core_TRANSLATOR,"mod translators of multiplayer-core, add 
 QMOD_META_multiplayer-extensions_NAME,mod name of multiplayer-extensions (1.40.8),MultiplayerExtensions
 QMOD_META_multiplayer-extensions_DESC,mod description of multiplayer-extensions (1.40.8),"Port of MultiplayerExtensions, the PC mod that adds extra features to multiplayer"
 QMOD_META_multiplayer-extensions_TRANSLATOR,"mod translators of multiplayer-extensions, add your name here if you translate this mod.",
+QMOD_META_newyears_NAME,mod name of newyears (1.40.8),New Year's Theme
+QMOD_META_newyears_DESC,mod description of newyears (1.40.8),Happy New Years!
+QMOD_META_newyears_TRANSLATOR,"mod translators of newyears, add your name here if you translate this mod.",
 QMOD_META_NoodleExtensions_NAME,mod name of NoodleExtensions (1.40.8),NoodleExtensions
 QMOD_META_NoodleExtensions_DESC,mod description of NoodleExtensions (1.40.8),This adds a host of new things you can do with your maps. Original mod for PC by Aeroluna. Contributions by Fern and Sc2ad.
 QMOD_META_NoodleExtensions_TRANSLATOR,"mod translators of NoodleExtensions, add your name here if you translate this mod.",
