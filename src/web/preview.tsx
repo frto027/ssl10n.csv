@@ -54,7 +54,6 @@ export default function Preview() {
       <div><p className="eyebrow">{t("previewEyebrow")}</p><h1>{title}</h1>
         <p className="muted">{rows ? t("tableSummary", { rows: rows.length.toLocaleString(locale), columns: columnCount.toLocaleString(locale) }) : t("previewDescription")}</p>
       </div>
-      <a className="button secondary" href="./index.html">{t("backHome")}</a>
     </header>
     {details && <SnapshotNotice details={details} />}
     {error !== null ? <div className="error" role="alert"><p>{errorText(error)}</p></div>
