@@ -3,7 +3,7 @@ import { parse } from "csv-parse/browser/esm/sync";
 import { fromBinary } from "@bufbuild/protobuf";
 import { SnapshotSchema } from "../protobuf/snapshot_pb";
 import SnapshotNotice, { type SnapshotDetails } from "./SnapshotNotice";
-import { readActiveSnapshot } from "./snapshotStorage";
+import { loadActiveSnapshot } from "./onlineSnapshot";
 import { selectSnapshotCsv } from "./snapshotCsv";
 import { csvColumnLabel } from "./csvColumns";
 import Footer from "./Footer";
@@ -24,11 +24,12 @@ export default function Preview() {
   const [error, setError] = useState<unknown>(null);
 
   useEffect(() => {
-    function load() {
+    const controller = new AbortController();
+    async function load() {
       try {
         if (!csv) throw new UiError("missingCsvPath");
-        const stored = readActiveSnapshot();
-        if (!stored) throw new UiError("missingStoredSnapshot");
+        const stored = await loadActiveSnapshot(controller.signal);
+        if (controller.signal.aborted) return;
         const snapshot = fromBinary(SnapshotSchema, stored.bytes);
         const selected = selectSnapshotCsv(snapshot, csv);
         const content = new TextDecoder().decode(selected.bytes);
@@ -37,10 +38,11 @@ export default function Preview() {
         setSelection({ modName: selected.modName, version: selected.version });
         setDetails({ source: stored.name, uploaded: stored.uploaded, timestamp: snapshot.timestamp.toString(), modsHashes: snapshot.modsHashes });
       } catch (error) {
-        setError(error);
+        if (!controller.signal.aborted) setError(error);
       }
     }
-    load();
+    void load();
+    return () => controller.abort();
   }, [csv]);
 
   useEffect(() => { document.title = `${title} · SSL10n`; }, [title, language]);

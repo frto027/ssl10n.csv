@@ -1,12 +1,12 @@
-import { fromBinary } from "@bufbuild/protobuf";
 import { useEffect, useRef, useState } from "react";
-import { SnapshotSchema, type Snapshot } from "../protobuf/snapshot_pb";
-import { clearUploadedSnapshot, readUploadedSnapshot, saveUploadedSnapshot, saveOnlineSnapshot } from "./snapshotStorage";
+import type { Snapshot } from "../protobuf/snapshot_pb";
+import { clearUploadedSnapshot, readUploadedSnapshot, saveUploadedSnapshot } from "./snapshotStorage";
 import SnapshotNotice, { type SnapshotDetails } from "./SnapshotNotice";
 import Footer from "./Footer";
 import LanguageSwitch from "./LanguageSwitch";
 import { useLanguage } from "./i18n";
 import { UiError } from "./messages";
+import { decodeSnapshot, loadActiveSnapshot } from "./onlineSnapshot";
 
 type LoadedSnapshot = { snapshot: Snapshot; source: string; uploaded: boolean };
 
@@ -42,15 +42,10 @@ export default function App() {
   const fileInput = useRef<HTMLInputElement>(null);
 
   function acceptSnapshot(bytes: Uint8Array, source: string, uploaded = false, persist = false) {
-    if (bytes.length === 0) throw new UiError("emptyProtobuf");
-    const snapshot = fromBinary(SnapshotSchema, bytes);
-    if (!snapshot.baseGameCsvTranslation && Object.keys(snapshot.mods).length === 0) {
-      throw new UiError("missingTranslations");
-    }
-    if (persist || !uploaded) {
+    const snapshot = decodeSnapshot(bytes);
+    if (persist) {
       try {
-        if (uploaded) saveUploadedSnapshot(source, bytes);
-        else saveOnlineSnapshot(source, bytes);
+        saveUploadedSnapshot(source, bytes);
       } catch {
         throw new UiError("storageWriteFailed");
       }
@@ -58,32 +53,15 @@ export default function App() {
     setLoaded({ snapshot, source, uploaded });
   }
 
-  async function loadDefault(initialError: Error | null = null) {
+  async function loadCurrentSnapshot(initialError: Error | null = null) {
     request.current?.abort();
     const controller = new AbortController();
     request.current = controller;
     setLoading(true);
     setError(initialError);
     try {
-      const manifestUrl = new URL(`${import.meta.env.BASE_URL}manifest.json`, window.location.href);
-      const response = await fetch(manifestUrl, { signal: controller.signal, cache: "no-cache" });
-      if (!response.ok) throw new UiError("manifestLoadFailed", { status: response.status });
-      const manifest: unknown = await response.json();
-      if (!manifest || typeof manifest !== "object" || !("protobufSnapshotBinaryUrl" in manifest)
-        || typeof manifest.protobufSnapshotBinaryUrl !== "string" || !manifest.protobufSnapshotBinaryUrl) {
-        throw new UiError("missingManifestUrl");
-      }
-      const publishedUrl = new URL(manifest.protobufSnapshotBinaryUrl, manifestUrl);
-      if (!["http:", "https:"].includes(publishedUrl.protocol)) throw new UiError("invalidManifestUrl");
-      // Prefer the deployed sibling file so local development uses local snapshots.
-      const siblingUrl = new URL(publishedUrl.pathname.split("/").pop()!, manifestUrl);
-      let binary = await fetch(siblingUrl, { signal: controller.signal });
-      if (!binary.ok && siblingUrl.href !== publishedUrl.href) {
-        binary = await fetch(publishedUrl, { signal: controller.signal });
-      }
-      if (!binary.ok) throw new UiError("protobufLoadFailed", { status: binary.status });
-      const bytes = new Uint8Array(await binary.arrayBuffer());
-      if (!controller.signal.aborted) acceptSnapshot(bytes, publishedUrl.pathname.split("/").pop()!);
+      const stored = await loadActiveSnapshot(controller.signal);
+      if (!controller.signal.aborted) acceptSnapshot(stored.bytes, stored.name, stored.uploaded);
     } catch (error) {
       if (!controller.signal.aborted) setError(initialError ? new AggregateError([initialError, error]) : error);
     } finally {
@@ -119,18 +97,18 @@ export default function App() {
     if (fileInput.current) fileInput.current.value = "";
     setSelectedFileName("");
     setLoaded(null);
-    void loadDefault();
+    void loadCurrentSnapshot();
   }
 
   useEffect(() => {
     try {
       const stored = readUploadedSnapshot();
-      if (stored) acceptSnapshot(stored.bytes, stored.name, true);
-      else void loadDefault();
+      if (stored) decodeSnapshot(stored.bytes);
+      void loadCurrentSnapshot();
     } catch (error) {
       // Fall back to the manifest if browser storage is unavailable or corrupt.
       try { clearUploadedSnapshot(); } catch { /* Storage may be disabled. */ }
-      void loadDefault(new UiError("restoreFailed", { error: error instanceof Error ? error : String(error) }));
+      void loadCurrentSnapshot(new UiError("restoreFailed", { error: error instanceof Error ? error : String(error) }));
     }
     return () => {
       request.current?.abort();

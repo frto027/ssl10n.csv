@@ -24,16 +24,31 @@ The homepage loads the raw `.protobuf` snapshot referenced by `manifest.json`,
 or parses a selected local `.protobuf` file in the browser. Each mod version
 opens `index.html?csv=mods/<encoded-mod-id>/<version-index>.csv`
 in a new tab, displaying the original CSV as an HTML table. Base game translations
-use `csv=base-game.csv`. The preview reads the protobuf directly from localStorage
-and can be refreshed after closing the homepage. It displays the filename,
+use `csv=base-game.csv`. The preview reads the current protobuf from localStorage
+and refreshes expired online data as described below, so it can be refreshed
+after closing the homepage. It displays the filename,
 timestamp, and modsHashes of the currently stored file without consistency checks.
 
 Uploaded protobuf bytes (Base64) and the filename are stored together in
 localStorage under the fixed key `ssl10n.uploadedProtobuf`. The homepage restores
-this file before loading the manifest. Its top banner has a Clear button that
-removes the saved file and loads the default snapshot; Load default snapshot
+this file in preference to the online snapshot after checking the manifest. Its top banner has a Clear button that
+removes the saved file and downloads the latest manifest; Load latest manifest
 does the same. Invalid files or storage write failures do not replace the saved file.
 Online protobuf files are stored separately under the fixed key
 `ssl10n.onlineProtobuf`, so previewing online data does not replace the upload.
 The preview uses the uploaded file whenever `ssl10n.uploadedProtobuf` is nonempty;
 otherwise it reads the online file. URL parameters do not choose the source.
+
+Every homepage and CSV preview load first downloads `manifest.json` with a
+current `time=<timestamp>` query parameter. If an upload is saved, it remains
+the active file. Otherwise, the online cache is reused only when its saved
+filename matches the filename in `protobufSnapshotBinaryUrl`; a different
+filename, missing cache, or corrupt data triggers a protobuf download.
+There is no two-hour expiry. Load latest manifest performs the same filename
+check after clearing the upload.
+
+The online record stores the protobuf filename in `name` and its successful
+download time in `loadedAt` (milliseconds). Protobuf requests do not add a time
+parameter. All requests use `cache: "no-cache"`. Failed or cancelled downloads
+do not overwrite the last saved online record. There is no periodic background
+refresh.
