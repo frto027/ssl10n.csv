@@ -62,12 +62,10 @@ jobs:
       #     CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
 
       - name: Upload artifact
-        if: steps.gen-page.outputs.stop != 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'web_root'
           
       - name: Deploy to GitHub Pages
-        if: steps.gen-page.outputs.stop != 'true'
         id: deployment
         uses: actions/deploy-pages@v5

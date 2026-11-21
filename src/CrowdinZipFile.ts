@@ -4,7 +4,7 @@ import StreamZip from "node-stream-zip";
 export class CrowdinZipFile{
     /* modName, keyCode, langCode, translate */
     datas:Map<string, Map<string, Map<string, string>> > = new Map()
-
+    baseGameFileContent?: Buffer
     constructor(){
         
     }
@@ -19,6 +19,10 @@ export class CrowdinZipFile{
             const entry = entries[fileName]!
             if(!entry.isFile)
                 continue
+            if(fileName == "beat-saber.csv"){
+                this.baseGameFileContent = await zip.entryData(entry)
+                continue
+            }
             const m = re.exec(fileName)
             if(!m){
                 console.log(`can't handle ${fileName}, ignore it`)

@@ -33,15 +33,19 @@ Optional:
 
 # ssl10n.csv
 
-this repo generates csv file for each bs mods
+this repo generates csv file for each bs mods, all of them are embbed into a protobuf binary.
 
 this is a nodejs project. see `package.json` for avaliable scripts...
+
+Frontend development: see [FRONTEND.md](./FRONTEND.md).
 
 # Repo output
 
 [web page](https://frto027.github.io/ssl10n.csv/index.html)
 
 api: [manifest.json](https://frto027.github.io/ssl10n.csv/manifest.json), the json format is [RemoteManifestMods](src/RemoteMods.ts)
+
+We're using protobuf. See `src/protobuf/snapshot.proto` for file format. and you can get a `.protobuf` file's url in the manifest.
 
 # Repo input
 
