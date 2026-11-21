@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file snapshot.proto.
  */
 export const file_snapshot: GenFile = /*@__PURE__*/
-  fileDesc("Cg5zbmFwc2hvdC5wcm90byKNAgoIU25hcHNob3QSEQoJdGltZXN0YW1wGAEgASgEEjEKDmRpc3BsYXlNZXNzYWdlGAIgASgLMhQuU25hcHNob3RJbmZvcm1hdGlvbkgAiAEBEiMKFmJhc2VHYW1lQ3N2VHJhbnNsYXRpb24YAyABKAxIAYgBARIhCgRtb2RzGAQgAygLMhMuU25hcHNob3QuTW9kc0VudHJ5EhIKCm1vZHNIYXNoZXMYBSABKAkaMQoJTW9kc0VudHJ5EgsKA2tleRgBIAEoCRITCgV2YWx1ZRgCIAEoCzIELk1vZDoCOAFCEQoPX2Rpc3BsYXlNZXNzYWdlQhkKF19iYXNlR2FtZUNzdlRyYW5zbGF0aW9uIjgKA01vZBIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEhcKBWRhdGFzGAMgAygLMgguTW9kRGF0YSIvCgdNb2REYXRhEg8KB3ZlcnNpb24YASABKAkSEwoLY3N2X2NvbnRlbnQYAiABKAwihAEKE1NuYXBzaG90SW5mb3JtYXRpb24SDwoHbWVzc2FnZRgBIAEoCRI2Cghwb3NpdGlvbhgCIAEoDjIkLlNuYXBzaG90SW5mb3JtYXRpb24uRGlzcGxheVBvc2l0aW9uIiQKD0Rpc3BsYXlQb3NpdGlvbhIRCg1TSV9EVF9JTl9NRU5VEABiBnByb3RvMw");
+  fileDesc("Cg5zbmFwc2hvdC5wcm90byLjAgoIU25hcHNob3QSEQoJdGltZXN0YW1wGAEgASgEEjEKDmRpc3BsYXlNZXNzYWdlGAIgASgLMhQuU25hcHNob3RJbmZvcm1hdGlvbkgAiAEBEiMKFmJhc2VHYW1lQ3N2VHJhbnNsYXRpb24YAyABKAxIAYgBARIhCgRtb2RzGAQgAygLMhMuU25hcHNob3QuTW9kc0VudHJ5EhIKCm1vZHNIYXNoZXMYBSABKAkSJQoGcGNNb2RzGAYgAygLMhUuU25hcHNob3QuUGNNb2RzRW50cnkaMQoJTW9kc0VudHJ5EgsKA2tleRgBIAEoCRITCgV2YWx1ZRgCIAEoCzIELk1vZDoCOAEaLQoLUGNNb2RzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4AUIRCg9fZGlzcGxheU1lc3NhZ2VCGQoXX2Jhc2VHYW1lQ3N2VHJhbnNsYXRpb24iOAoDTW9kEgoKAmlkGAEgASgJEgwKBG5hbWUYAiABKAkSFwoFZGF0YXMYAyADKAsyCC5Nb2REYXRhIi8KB01vZERhdGESDwoHdmVyc2lvbhgBIAEoCRITCgtjc3ZfY29udGVudBgCIAEoDCKEAQoTU25hcHNob3RJbmZvcm1hdGlvbhIPCgdtZXNzYWdlGAEgASgJEjYKCHBvc2l0aW9uGAIgASgOMiQuU25hcHNob3RJbmZvcm1hdGlvbi5EaXNwbGF5UG9zaXRpb24iJAoPRGlzcGxheVBvc2l0aW9uEhEKDVNJX0RUX0lOX01FTlUQAGIGcHJvdG8z");
 
 /**
  * @generated from message Snapshot
@@ -40,6 +40,11 @@ export type Snapshot = Message<"Snapshot"> & {
    * @generated from field: string modsHashes = 5;
    */
   modsHashes: string;
+
+  /**
+   * @generated from field: map<string, bytes> pcMods = 6;
+   */
+  pcMods: { [key: string]: Uint8Array };
 };
 
 /**

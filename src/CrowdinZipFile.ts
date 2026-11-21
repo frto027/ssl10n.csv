@@ -4,6 +4,8 @@ import StreamZip from "node-stream-zip";
 export class CrowdinZipFile{
     /* modName, keyCode, langCode, translate */
     datas:Map<string, Map<string, Map<string, string>> > = new Map()
+    bareDatas:Map<string, Buffer> = new Map()
+
     baseGameFileContent?: Buffer
     constructor(){
         
@@ -25,7 +27,8 @@ export class CrowdinZipFile{
             }
             const m = re.exec(fileName)
             if(!m){
-                console.log(`can't handle ${fileName}, ignore it`)
+                console.log(`can't handle ${fileName}, ignore it and push it to bare data`)
+                this.bareDatas.set(fileName, await zip.entryData(entry))
                 continue
             }
             const langCode = m[1]

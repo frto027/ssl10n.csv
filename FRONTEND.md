@@ -29,6 +29,10 @@ and refreshes expired online data as described below, so it can be refreshed
 after closing the homepage. It displays the filename,
 timestamp, and modsHashes of the currently stored file without consistency checks.
 
+The `pcMods` map is displayed separately as PC Mods, with one preview per ID.
+PC mod CSVs use the virtual path `pc-mods/<encoded-mod-id>.csv`; they do not
+have version metadata. Snapshots containing only PC mods are supported.
+
 Uploaded protobuf bytes (Base64) and the filename are stored together in
 localStorage under the fixed key `ssl10n.uploadedProtobuf`. The homepage restores
 this file in preference to the online snapshot after checking the manifest. Its top banner has a Clear button that

@@ -118,6 +118,7 @@ export default function App() {
   useEffect(() => { document.title = t("siteTitle"); }, [language]);
 
   const mods = loaded ? Object.entries(loaded.snapshot.mods).sort(([a], [b]) => a.localeCompare(b)) : [];
+  const pcMods = loaded ? Object.entries(loaded.snapshot.pcMods).sort(([a], [b]) => a.localeCompare(b)) : [];
 
   return (
     <main className="app">
@@ -158,7 +159,7 @@ export default function App() {
         <section className="snapshot-info" aria-label={t("snapshotInfo")}>
           <div><span className="muted">{t("currentFile")}</span><strong>{loaded.source}</strong></div>
           <div><span className="muted">{t("snapshotTime")}</span><strong>{formatTimestamp(loaded.snapshot.timestamp, locale)}</strong></div>
-          <div><span className="muted">{t("modCount")}</span><strong>{mods.length}</strong></div>
+          <div><span className="muted">{t("modCount")}</span><strong>{mods.length + pcMods.length}</strong></div>
         </section>
         {loaded.snapshot.displayMessage && <aside className="panel notice">
           <h2>{t("announcement")}</h2><p>{loaded.snapshot.displayMessage.message || t("emptyAnnouncement")}</p>
@@ -180,6 +181,17 @@ export default function App() {
                 <PreviewLink path={`mods/${encodeURIComponent(key)}/${index}.csv`} title={`${mod.name || mod.id || key} · ${data.version || t("unspecifiedVersion")}`} />
               </li>)}
             </ul>}
+          </article>)}</div>
+        </section>
+        <section aria-labelledby="pc-mods-title">
+          <div className="section-heading"><h2 id="pc-mods-title">{t("pcMods")}</h2><span className="muted">{t("itemCount", { count: pcMods.length.toLocaleString(locale) })}</span></div>
+          {pcMods.length === 0 && <p className="panel muted">{t("noPcMods")}</p>}
+          <div className="mod-list">{pcMods.map(([id, content]) => <article className="panel mod-item" key={id}>
+            <div className="mod-heading"><h3>{id}</h3></div>
+            <ul className="version-list"><li>
+              <div className="muted">{content.byteLength.toLocaleString(locale)} {t("bytes")}</div>
+              <PreviewLink path={`pc-mods/${encodeURIComponent(id)}.csv`} title={id} />
+            </li></ul>
           </article>)}</div>
         </section>
       </div>}

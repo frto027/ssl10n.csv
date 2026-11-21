@@ -16,8 +16,9 @@ export default function Preview() {
   const { language, locale, columns, t, errorText } = useLanguage();
   const params = new URLSearchParams(window.location.search);
   const csv = params.get("csv");
-  const [selection, setSelection] = useState<{ modName: string | null; version: string } | null>(null);
+  const [selection, setSelection] = useState<{ modName: string | null; version: string | null } | null>(null);
   const title = selection ? selection.modName === null ? t("baseGameTitle")
+    : selection.version === null ? selection.modName
     : `${selection.modName} · ${selection.version || t("unspecifiedVersion")}` : t("previewTitle");
   const [details, setDetails] = useState<SnapshotDetails | null>(null);
   const [rows, setRows] = useState<string[][] | null>(null);

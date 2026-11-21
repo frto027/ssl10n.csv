@@ -6,7 +6,8 @@ import { readOnlineSnapshot, readUploadedSnapshot, saveOnlineSnapshot } from "./
 export function decodeSnapshot(bytes: Uint8Array) {
   if (bytes.length === 0) throw new UiError("emptyProtobuf");
   const snapshot = fromBinary(SnapshotSchema, bytes);
-  if (!snapshot.baseGameCsvTranslation && Object.keys(snapshot.mods).length === 0) {
+  if (!snapshot.baseGameCsvTranslation && Object.keys(snapshot.mods).length === 0
+    && Object.keys(snapshot.pcMods).length === 0) {
     throw new UiError("missingTranslations");
   }
   return snapshot;

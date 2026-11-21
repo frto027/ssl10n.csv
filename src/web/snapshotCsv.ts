@@ -6,6 +6,12 @@ export function selectSnapshotCsv(snapshot: Snapshot, path: string) {
     if (!snapshot.baseGameCsvTranslation) throw new UiError("missingBaseGame");
     return { bytes: snapshot.baseGameCsvTranslation, modName: null, version: "" };
   }
+  const pcMatch = /^pc-mods\/([^/]+)\.csv$/.exec(path);
+  if (pcMatch) {
+    const key = decodeURIComponent(pcMatch[1]!);
+    if (!Object.hasOwn(snapshot.pcMods, key)) throw new UiError("missingPcMod");
+    return { bytes: snapshot.pcMods[key]!, modName: key, version: null };
+  }
   const match = /^mods\/([^/]+)\/(\d+)\.csv$/.exec(path);
   if (!match) throw new UiError("invalidCsvPath");
   const key = decodeURIComponent(match[1]!);

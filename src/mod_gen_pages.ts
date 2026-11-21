@@ -3,7 +3,7 @@ import { CrowdinOperates } from "./CrowdinOperates.js";
 import { LocalMod, ModsHasher } from "./LocalMods.js";
 import { CrowdinZipFile } from "./CrowdinZipFile.js";
 import type { RemoteManifestMods } from "./RemoteMods.js";
-import { WEB_ROOT } from "./mods.js";
+import { PCMods, WEB_ROOT } from "./mods.js";
 import { create, toBinary, toJsonString } from "@bufbuild/protobuf";
 import { SnapshotSchema } from "./protobuf/snapshot_pb.js";
 import { createHash } from "node:crypto";
@@ -66,7 +66,8 @@ async function generate_pages_from_zip(build_id:number){
 
     const protobufSnapshot = create(SnapshotSchema, {
         timestamp : BigInt(buildTimestamp.getTime()) as bigint,
-        mods: {}
+        mods: {},
+        pcMods: {}
     })
 
     const hasher = new ModsHasher();
@@ -85,6 +86,17 @@ async function generate_pages_from_zip(build_id:number){
     for(let mod of mods){
         await mod.handleCrowdinZip(crowninZip, protobufSnapshot, hasher)
     }
+    for(let pcmod in PCMods){
+        if(crowninZip.bareDatas.has(PCMods[pcmod]!)){
+            const buffer = crowninZip.bareDatas.get(PCMods[pcmod]!)!
+            hasher.updateBuffer(buffer)
+            protobufSnapshot.pcMods[pcmod] = buffer
+        }else{
+            console.error("pcmod not found:" + pcmod)
+        }
+    }
+
+
     protobufSnapshot.modsHashes = hasher.hash.digest("hex")
     manifest.modsHashesInProtobuf = protobufSnapshot.modsHashes
 

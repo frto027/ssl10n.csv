@@ -16,6 +16,10 @@ export type ManifestMods = Record<string /* mod id */, ManifestModInfo>
 
 export const WEB_ROOT = "https://frto027.github.io/ssl10n.csv"
 
+export const PCMods:Record<string, string> = {
+    "SiraLocalizer" : "plugins/sira-localizer.csv"
+}
+
 export const ModDatabase:ManifestMods = {
     "ModMetadata": {
         name: "ModMetadata",
