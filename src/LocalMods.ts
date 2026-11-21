@@ -2,11 +2,13 @@ import * as fs from "node:fs"
 import { CrowdinOperates } from "./CrowdinOperates.js"
 import { Buffer } from "node:buffer"
 import { ModDatabase, WEB_ROOT, type ManifestModInfo, type ManifestVersionSource } from "./mods.js"
-import type { RemoteManifestMods, RemoteModInfo } from "./RemoteMods.js"
+import type { RemoteManifestMods } from "./RemoteMods.js"
 import { CrowdinZipFile } from "./CrowdinZipFile.js"
 import { stringify } from "csv-stringify/sync"
-import { createHash } from "node:crypto"
+import { createHash, Hash } from "node:crypto"
 import { parse } from "csv-parse/sync"
+import { ModDataSchema, ModSchema, type Mod, type Snapshot } from "./protobuf/snapshot_pb.js"
+import { create } from "@bufbuild/protobuf"
 
 export class LocalMod {
     modId: string
@@ -48,15 +50,16 @@ export class LocalMod {
         }
     }
 
-    async handleCrowdinZip(zip:CrowdinZipFile, remote:RemoteManifestMods) {
-        const modInfo:RemoteModInfo = {
+    async handleCrowdinZip(zip:CrowdinZipFile, protobufSnapshot: Snapshot, hasher: ModsHasher) {
+        const mod = create(ModSchema, {
+            id: this.modId,
             name: this.info.name || this.modId,
-            datas: []
-        }
+        })
+
         for (let l of this.localVersions) {
-            await l.handleCrowdinZip(zip, modInfo)
+            await l.handleCrowdinZip(zip, mod, hasher)
         }
-        remote.mods[this.modId] = modInfo
+        protobufSnapshot.mods[this.modId] = mod
     }
 
     saveRemote(): RemoteManifestMods {
@@ -294,7 +297,7 @@ class LocalVersionSource {
         }
     }
 
-    async handleCrowdinZip(zip:CrowdinZipFile, remote:RemoteModInfo) {
+    async handleCrowdinZip(zip:CrowdinZipFile, remote:Mod, hasher: ModsHasher) {
         console.log("handle crowdin file for local csv file" + this.version.csv_local)
         if(this.version.crowdin_sync_file == undefined){
             console.log("no csv file.")
@@ -307,9 +310,6 @@ class LocalVersionSource {
             return
         }
 
-        if(!fs.existsSync("web_root/mods/")){
-            fs.mkdirSync("web_root/mods/", {recursive: true})
-        }
         console.log("generating...")
         
         const column_count = 2 + CrowdinZipFile.crowdin_order.length
@@ -352,15 +352,27 @@ class LocalVersionSource {
             record_delimiter:"windows"
         })
         console.log("done")
-        const hash = createHash("md5").update(csv_content).digest("hex")
-        const sync_file_name = `mods/${hash.substring(0,6)}.${this.version.crowdin_sync_file}`
-        fs.writeFileSync(`web_root/${sync_file_name}`, csv_content)
+        hasher.update(csv_content)
 
-        remote.datas.push({
-            version: this.version.version,
-            csv_url: `${WEB_ROOT}/${sync_file_name}`,
-            csv_name: this.version.crowdin_sync_file,
-            md5:hash
-        })
+        remote.datas.push(
+            create(ModDataSchema, {
+                version: this.version.version,
+                csvContent: Buffer.from(csv_content, "utf-8")
+            })
+        )
     }
 }
+
+export class ModsHasher{
+    hash:Hash
+    constructor(){
+        this.hash = createHash("sha256")
+    }
+    update(data:string){
+        this.hash.update(data)
+    }
+    updateBuffer(data:Buffer){
+        this.hash.update(data)
+    }
+}
+
