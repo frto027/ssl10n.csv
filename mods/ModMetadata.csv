@@ -148,6 +148,9 @@ QMOD_META_jdfixer_TRANSLATOR,"mod translators of jdfixer, add your name here if 
 QMOD_META_lapiz_NAME,mod name of lapiz (1.45.3),Lapiz
 QMOD_META_lapiz_DESC,mod description of lapiz (1.45.3),Lapiz makes modders' lives easier by exposing utilities to them cleanly. This mod does nothing on its own.
 QMOD_META_lapiz_TRANSLATOR,"mod translators of lapiz, add your name here if you translate this mod.",
+QMOD_META_Loqolizer_NAME,mod name of Loqolizer (1.45.3),Loqolizer
+QMOD_META_Loqolizer_DESC,mod description of Loqolizer (1.45.3),Translate your game and mods
+QMOD_META_Loqolizer_TRANSLATOR,"mod translators of Loqolizer, add your name here if you translate this mod.",
 QMOD_META_MappingExtensions_NAME,mod name of MappingExtensions (1.40.8),Mapping Extensions
 QMOD_META_MappingExtensions_DESC,mod description of MappingExtensions (1.40.8),"This adds a host of new things you can do with your maps as a mapper, and allows you to play said maps as a player. An update of the port of the PC original mod by Kyle 1413. Previously maintained by zoller27osu."
 QMOD_META_MappingExtensions_TRANSLATOR,"mod translators of MappingExtensions, add your name here if you translate this mod.",
